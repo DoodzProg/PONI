@@ -1,0 +1,24 @@
+<!--
+  PONI design system - theme-independent tokens: fonts, radii, sizes.
+  Fonts are the ones shipped with Windows (nothing embedded): Segoe UI Variable on
+  Windows 11, falling back to Segoe UI on Windows 10.
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <FontFamily x:Key="FontText">Segoe UI Variable Text, Segoe UI</FontFamily>
+    <FontFamily x:Key="FontDisplay">Segoe UI Variable Display, Segoe UI</FontFamily>
+    <FontFamily x:Key="FontMono">Cascadia Mono, Consolas</FontFamily>
+
+    <CornerRadius x:Key="RadiusCard">18</CornerRadius>
+    <CornerRadius x:Key="RadiusGroup">16</CornerRadius>
+    <CornerRadius x:Key="RadiusNav">10</CornerRadius>
+    <CornerRadius x:Key="RadiusTile">12</CornerRadius>
+    <CornerRadius x:Key="RadiusSegment">9</CornerRadius>
+
+    <Thickness x:Key="PagePadding">40,36,40,24</Thickness>
+
+    <Duration x:Key="MotionFast">0:0:0.15</Duration>
+
+</ResourceDictionary>

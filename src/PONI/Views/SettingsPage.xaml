@@ -1,0 +1,180 @@
+<UserControl x:Class="Poni.Views.SettingsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:Poni.Controls">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Focusable="False">
+        <Grid Margin="{StaticResource PagePadding}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.25*"/>
+                <ColumnDefinition Width="22"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.ColumnSpan="3" Margin="0,0,0,26">
+                <TextBlock Text="{DynamicResource Str.Settings.Title}" Style="{StaticResource PageTitle}"/>
+                <TextBlock Text="{DynamicResource Str.Settings.Subtitle}" Style="{StaticResource PageSubtitle}"/>
+            </StackPanel>
+
+            <!-- ============================================ Left column -->
+            <StackPanel Grid.Row="1" Grid.Column="0">
+
+                <!-- General -->
+                <TextBlock Text="{DynamicResource Str.Settings.General}" Style="{StaticResource SectionHeader}"/>
+                <ContentControl Style="{StaticResource GroupCard}" Margin="0,0,0,22">
+                    <StackPanel>
+                        <Grid Style="{StaticResource GroupRow}">
+                            <TextBlock Text="{DynamicResource Str.Settings.Language}" Style="{StaticResource RowTitle}" VerticalAlignment="Center"/>
+                            <Border Style="{StaticResource SegmentedHost}">
+                                <StackPanel Orientation="Horizontal">
+                                    <RadioButton Style="{StaticResource SegmentItem}" GroupName="Lang" Content="Français"
+                                                 IsChecked="{Binding Language, Converter={StaticResource EnumToBool}, ConverterParameter=French}"/>
+                                    <RadioButton Style="{StaticResource SegmentItem}" GroupName="Lang" Content="English"
+                                                 IsChecked="{Binding Language, Converter={StaticResource EnumToBool}, ConverterParameter=English}"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                        <Border Style="{StaticResource GroupDivider}" Margin="16,0,0,0"/>
+                        <Grid Style="{StaticResource GroupRow}">
+                            <TextBlock Text="{DynamicResource Str.Settings.Appearance}" Style="{StaticResource RowTitle}" VerticalAlignment="Center"/>
+                            <Border Style="{StaticResource SegmentedHost}">
+                                <StackPanel Orientation="Horizontal">
+                                    <RadioButton Style="{StaticResource SegmentItem}" GroupName="Theme" Content="{DynamicResource Str.Settings.Theme.System}"
+                                                 IsChecked="{Binding Theme, Converter={StaticResource EnumToBool}, ConverterParameter=System}"/>
+                                    <RadioButton Style="{StaticResource SegmentItem}" GroupName="Theme" Content="{DynamicResource Str.Settings.Theme.Light}"
+                                                 IsChecked="{Binding Theme, Converter={StaticResource EnumToBool}, ConverterParameter=Light}"/>
+                                    <RadioButton Style="{StaticResource SegmentItem}" GroupName="Theme" Content="{DynamicResource Str.Settings.Theme.Dark}"
+                                                 IsChecked="{Binding Theme, Converter={StaticResource EnumToBool}, ConverterParameter=Dark}"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                </ContentControl>
+
+                <!-- Applying profiles -->
+                <TextBlock Text="{DynamicResource Str.Settings.ApplyGroup}" Style="{StaticResource SectionHeader}"/>
+                <ContentControl Style="{StaticResource GroupCard}" Margin="0,0,0,22">
+                    <StackPanel>
+                        <Grid Style="{StaticResource GroupRow}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Margin="0,0,16,0">
+                                <TextBlock Text="{DynamicResource Str.Settings.SetPrivate}" Style="{StaticResource RowTitle}"/>
+                                <TextBlock Text="{DynamicResource Str.Settings.SetPrivate.Caption}" Style="{StaticResource RowCaption}"/>
+                            </StackPanel>
+                            <CheckBox Grid.Column="1" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding SetPrivateOnApply}"
+                                      VerticalAlignment="Center" AutomationProperties.Name="{DynamicResource Str.Settings.SetPrivate}"/>
+                        </Grid>
+                        <Border Style="{StaticResource GroupDivider}" Margin="16,0,0,0"/>
+                        <Grid Style="{StaticResource GroupRow}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Margin="0,0,16,0">
+                                <TextBlock Text="{DynamicResource Str.Settings.Rollback}" Style="{StaticResource RowTitle}"/>
+                                <TextBlock Text="{DynamicResource Str.Settings.Rollback.Caption}" Style="{StaticResource RowCaption}"/>
+                            </StackPanel>
+                            <CheckBox Grid.Column="1" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding RollbackOnFailure}"
+                                      VerticalAlignment="Center" AutomationProperties.Name="{DynamicResource Str.Settings.Rollback}"/>
+                        </Grid>
+                    </StackPanel>
+                </ContentControl>
+
+                <!-- Hyper-V module (E2): detected automatically, can be switched off -->
+                <TextBlock Text="{DynamicResource Str.Settings.HyperV}" Style="{StaticResource SectionHeader}"/>
+                <ContentControl Style="{StaticResource GroupCard}">
+                    <StackPanel>
+                        <Grid Style="{StaticResource GroupRow}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Margin="0,0,16,0">
+                                <TextBlock Text="{DynamicResource Str.Settings.HyperV.Manage}" Style="{StaticResource RowTitle}"/>
+                                <TextBlock Text="{Binding HyperV.StatusText}" Style="{StaticResource RowCaption}"/>
+                            </StackPanel>
+                            <CheckBox Grid.Column="1" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding HyperVEnabled}"
+                                      IsEnabled="{Binding HyperV.CanToggle}"
+                                      VerticalAlignment="Center" AutomationProperties.Name="{DynamicResource Str.Settings.HyperV.Manage}"/>
+                        </Grid>
+                        <StackPanel Visibility="{Binding HyperV.IsEnabled, Converter={StaticResource Visible}}">
+                            <Border Style="{StaticResource GroupDivider}" Margin="16,0,0,0"/>
+                            <Grid Style="{StaticResource GroupRow}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Margin="0,0,16,0">
+                                    <TextBlock Text="{DynamicResource Str.Settings.Rj45Adapter}" Style="{StaticResource RowTitle}"/>
+                                    <TextBlock Text="{DynamicResource Str.Settings.Rj45Adapter.Caption}" Style="{StaticResource RowCaption}"/>
+                                </StackPanel>
+                                <Button Grid.Column="1" Style="{StaticResource SmallSecondaryButton}" VerticalAlignment="Center"
+                                        Command="{Binding ChangePhysicalCommand}"
+                                        AutomationProperties.Name="{DynamicResource Str.Settings.Rj45Adapter}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding PhysicalName}"/>
+                                        <TextBlock Text=" ›" Foreground="{DynamicResource TextSecondaryBrush}"/>
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+                            <Border Style="{StaticResource GroupDivider}" Margin="16,0,0,0"/>
+                            <Grid Style="{StaticResource GroupRow}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Margin="0,0,16,0">
+                                    <TextBlock Text="{DynamicResource Str.Settings.VmPing}" Style="{StaticResource RowTitle}"/>
+                                    <TextBlock Text="{DynamicResource Str.Settings.VmPing.Caption}" Style="{StaticResource RowCaption}"/>
+                                </StackPanel>
+                                <CheckBox Grid.Column="1" Style="{StaticResource ToggleSwitch}" IsChecked="{Binding VmAllowPing}"
+                                          VerticalAlignment="Center" AutomationProperties.Name="{DynamicResource Str.Settings.VmPing}"/>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </ContentControl>
+            </StackPanel>
+
+            <!-- ============================================ Right column -->
+            <StackPanel Grid.Row="1" Grid.Column="2">
+                <TextBlock Text="{DynamicResource Str.Settings.About}" Style="{StaticResource SectionHeader}"/>
+                <ContentControl Style="{StaticResource GroupCard}" Padding="18,22,18,18">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Border Width="76" Height="76" CornerRadius="20" Background="{DynamicResource LogoBackgroundBrush}" HorizontalAlignment="Center">
+                            <Image Source="/Assets/poni-logo.png" Width="70" Height="70" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        </Border>
+                        <TextBlock Text="{Binding VersionLabel}" FontFamily="{StaticResource FontDisplay}" FontSize="20" FontWeight="Bold"
+                                   HorizontalAlignment="Center" Margin="0,12,0,0"/>
+                        <TextBlock Text="{DynamicResource Str.Settings.About.Credits}" Style="{StaticResource RowCaption}" HorizontalAlignment="Center"/>
+                        <Button Style="{StaticResource SecondaryButton}" Height="32" Padding="14,0" FontSize="13" Margin="0,14,0,0"
+                                c:Ui.CornerRadius="16" HorizontalAlignment="Center"
+                                Content="{DynamicResource Str.Settings.About.GitHub}" Command="{Binding OpenRepositoryCommand}"/>
+                    </StackPanel>
+                </ContentControl>
+
+                <!-- Diagnostics: the in-app log viewer -->
+                <TextBlock Text="{DynamicResource Str.Settings.Diagnostics}" Style="{StaticResource SectionHeader}" Margin="16,22,0,8"/>
+                <ContentControl Style="{StaticResource GroupCard}">
+                    <Grid Style="{StaticResource GroupRow}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Margin="0,0,16,0">
+                            <TextBlock Text="{DynamicResource Str.Settings.Log}" Style="{StaticResource RowTitle}"/>
+                            <TextBlock Text="{DynamicResource Str.Settings.Log.Caption}" Style="{StaticResource RowCaption}"/>
+                        </StackPanel>
+                        <Button Grid.Column="1" Style="{StaticResource SmallSecondaryButton}" VerticalAlignment="Center"
+                                Content="{DynamicResource Str.Settings.Log.Open}" Command="{Binding OpenLogCommand}"/>
+                    </Grid>
+                </ContentControl>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

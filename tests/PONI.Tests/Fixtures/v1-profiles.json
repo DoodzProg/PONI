@@ -1,0 +1,71 @@
+﻿{
+    "Profiles":  [
+                     {
+                         "Name":  "Client-SiteA",
+                         "IPAddress":  "10.20.30.233",
+                         "PrefixLength":  24,
+                         "Gateway":  "10.20.30.1",
+                         "DNS":  [
+                                     "8.8.8.8",
+                                     "1.1.1.1"
+                                 ],
+                         "CreatedOn":  "2026-08-03 20:00",
+                         "LastTarget":  "Hote",
+                         "LastAdapterName":  "Ethernet",
+                         "LastVMName":  null,
+                         "LastVMAdapterName":  null
+                     },
+                     {
+                         "Name":  "Labo-VM",
+                         "IPAddress":  "192.168.50.10",
+                         "PrefixLength":  24,
+                         "Gateway":  "",
+                         "DNS":  [
+
+                                 ],
+                         "CreatedOn":  "2026-09-03 17:02",
+                         "LastTarget":  "VM",
+                         "LastAdapterName":  null,
+                         "LastVMName":  "VM-Test",
+                         "LastVMAdapterName":  "Carte-RJ45",
+                         "LastAppliedOn":  "03/09/26-17:07:21"
+                     },
+                     {
+                         "Name":  "T-DNS",
+                         "IPAddress":  "10.0.0.10",
+                         "PrefixLength":  24,
+                         "Gateway":  "",
+                         "DNS":  [
+                                     "1.1.1.1",
+                                     "999.1.1.1"
+                                 ],
+                         "CreatedOn":  "2026-09-03 16:00",
+                         "LastTarget":  null,
+                         "LastAdapterName":  null,
+                         "LastVMName":  null,
+                         "LastVMAdapterName":  null
+                     },
+                     {
+                         "Name":  "Bureau",
+                         "IPAddress":  "192.168.1.220",
+                         "PrefixLength":  24,
+                         "Gateway":  "192.168.1.1",
+                         "DNS":  [
+                                     "1.1.1.1"
+                                 ],
+                         "CreatedOn":  "2026-09-03 18:10",
+                         "LastTarget":  "Host",
+                         "LastAdapterName":  "Wi-Fi",
+                         "LastVMName":  null,
+                         "LastVMAdapterName":  null,
+                         "LastAppliedOn":  "03/09/26-22:53:42"
+                     }
+                 ],
+    "RJ45":  {
+                 "PhysicalAdapter":  "Ethernet",
+                 "CurrentTarget":  "VM: VM-Test"
+             },
+    "Settings":  {
+                     "Language":  "fr"
+                 }
+}

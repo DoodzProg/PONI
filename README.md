@@ -1,110 +1,158 @@
-<h1 align="center">PONI</h1>
-<p align="center"><em><b>P</b>lain <b>O</b>pen <b>N</b>etwork <b>I</b>nterface: a portable Windows network-profile switcher</em></p>
-
-<p align="center"><img src="assets/PONI_icon.png" width="120" alt="PONI logo"></p>
+<h1 align="center">
+  <img src="assets/PONI_icon.png" width="72" alt=""><br>
+  PONI
+</h1>
+<p align="center"><em><b>P</b>lain <b>O</b>pen <b>N</b>etwork <b>I</b>nterface: switch your PC's network settings in one click</em></p>
 
 <p align="center">
   <a href="https://github.com/DoodzProg/PONI/releases/latest/download/PONI.exe">
-    <img src="https://img.shields.io/badge/Download-PONI%20v1.0-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Download PONI v1.0">
+    <img src="assets/download-button.svg" width="360" alt="Download PONI.exe">
   </a>
+</p>
+<p align="center">
+  <sub>One file, nothing to install &middot; Windows 10 / 11 (64-bit) &middot; free and open source (MIT)</sub>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/platform-Windows%2010%20%2F%2011%20x64-555" alt="Windows 10/11 x64">
-  <img src="https://img.shields.io/badge/install-none%20(single%20.exe)-107C10" alt="No install">
-  <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/profiles-dark.png">
+    <img src="assets/screenshots/profiles-light.png" width="880" alt="PONI - Network profiles">
+  </picture>
 </p>
 
 ---
 
-# Download
+## Get started
 
-One portable `.exe`. No installer, no dependencies. It raises its own UAC prompt and keeps
-everything in `%APPDATA%\PONI\`.
+1. **[Download PONI.exe](https://github.com/DoodzProg/PONI/releases/latest/download/PONI.exe)**.
+2. Put it anywhere you like: a folder, the desktop, a USB stick. That single file is the whole app.
+3. Double-click it and accept the administrator prompt (changing network settings needs it).
 
-### Get it
-
-1. Click **[Download PONI v1.0](https://github.com/DoodzProg/PONI/releases/latest/download/PONI.exe)** (or the [Releases page](https://github.com/DoodzProg/PONI/releases/latest)).
-2. Put `PONI.exe` wherever you want (a folder, a USB stick). Nothing else to copy.
-3. Double-click, accept the UAC prompt, done.
-
-### What it does
-
-PONI has two screens.
-
-**Network profiles**
-
-The interface for the IP configurations you switch between often.
-
-<p align="center"><img src="assets/Screen_Network_Profiles.png" width="880" alt="PONI - Network profiles screen"></p>
-
-* **Create, edit, delete and apply** profiles. A profile holds an IP address, a subnet
-  mask (`255.255.255.0` form), a gateway and any number of DNS servers, all validated as
-  you type.
-* *Import current config* fills a new profile straight from an adapter's real settings.
-* On **apply**, you choose the target each time (it is not baked into the profile):
-  * a **host network adapter**, or
-  * a **running Hyper-V VM** plus one of its adapters, applied via PowerShell Direct.
-    Inside the VM the right adapter is found by **MAC address**, so its `Ethernet N` name
-    does not matter.
-
-  PONI remembers your last target per profile and shows when it was last applied.
-* **Export / import**: save a profile set to a JSON file, all of them or a hand-picked
-  selection, and import one back. Handy to move configs between machines or share custom
-  ones with someone.
-* **Simple or detailed table**: a compact view (name / IP+mask / last target) or a full
-  one with separate IP, mask, gateway and DNS columns.
-* A panel at the top shows the PC's **current live network config**.
-
-**RJ45 port for VM**
-
-The interface for Hyper-V VMs: it decides whether the PC's physical RJ45 port feeds
-Windows (the host) or a virtual machine.
-
-<p align="center"><img src="assets/Screen_RJ45_VM.png" width="880" alt="PONI - RJ45 port for VM screen"></p>
-
-* One click routes the port to the host or to any detected VM.
-* PONI **creates and removes the Hyper-V switch it needs on its own**, adds the adapter
-  inside the VM, and tears it all down when you switch back.
-* A permanent banner explains the concept and a coloured box always shows where the port
-  points right now.
-
-**Throughout**
-
-* French / English, switchable at any time.
-* Every network action is **checked against the real system** before it is reported as
-  done, and runs in the background so the window never freezes.
-* A **resizable log** at the bottom keeps a timestamped, colour-coded history; a button
-  opens the log folder.
-
-### Requirements
-
-* Windows 10 / 11 (x64), administrator rights (the UAC prompt is automatic).
-* PowerShell 5.1 + WPF / .NET Framework, already present on any up-to-date Windows.
-* Hyper-V only for the VM and RJ45&#8596;VM features.
+> **"Windows protected your PC"?** PONI is not code-signed (a certificate costs hundreds of
+> euros a year for a free tool), so Windows SmartScreen may warn you the first time.
+> Click **More info**, then **Run anyway**. The source code is right here, and every release
+> comes with a SHA-256 checksum (see [Verify your download](#verify-your-download)).
 
 ---
 
-# For developers
+## What it does
 
-Everything is in one file: [`PONI.ps1`](PONI.ps1) (business logic + the WPF UI as embedded XAML).
+### Network profiles
 
-### Build
+Save the IP configurations you use often (office, lab bench, customer site, a device to set
+up...) and switch between them in one click instead of digging through Windows settings.
+
+* A **profile** holds an IP address, a subnet mask, a gateway and DNS servers, all checked
+  as you type. *Copy from...* fills it from one of your adapters.
+* **Apply** asks where: one of this PC's network adapters, or a virtual machine (see below).
+  If something goes wrong, the previous configuration is **put back automatically**.
+* The **"This machine"** cards show every adapter live: DHCP or manual, IP, gateway, DNS,
+  network type, Internet access. Their menu gives quick actions: configure, back to
+  automatic (DHCP), private / public network.
+* **Simple or detailed** list, search, and **sorting**: by name, by creation date, or your
+  own order by dragging profiles by their handle.
+* **Export / import** to a JSON file (all profiles or a selection) to move them to another
+  PC or share them. Only the network settings go in the file, nothing about your PC.
+
+<p align="center">
+  <img src="assets/screenshots/profile-editor-light.png" width="430" alt="Profile editor">
+  <img src="assets/screenshots/export-selection-light.png" width="430" alt="Export a selection of profiles">
+</p>
+<p align="center">
+  <img src="assets/screenshots/adapter-menu-light.png" width="880" alt="Adapter quick actions">
+</p>
+
+### RJ45 port and Hyper-V virtual machines
+
+For people who plug equipment into their PC to reach it from a **Hyper-V virtual machine**.
+This part appears only when Hyper-V is installed, and can be switched off in Settings.
+
+* **Give the PC's Ethernet port to a VM** in one click, or give it back to Windows. PONI
+  creates and removes the Hyper-V switch it needs, and only ever touches its own.
+* **Apply a profile inside a running VM** (PowerShell Direct, with the VM's credentials).
+  The VM's adapter is found by its MAC address, whatever its name is inside the VM.
+* The VM can **answer ping** from the devices on its network (a firewall rule of PONI's own,
+  local network only; can be turned off).
+* Detects and repairs VMs that Hyper-V refuses to start because a network adapter points to
+  a switch that no longer exists.
+
+<p align="center">
+  <img src="assets/screenshots/rj45-port-light.png" width="880" alt="RJ45 port screen">
+</p>
+
+### And also
+
+* **English / French**, light / dark / system theme.
+* A built-in **log** of everything PONI read and changed (kept 30 days), easy to copy into a
+  bug report.
+* Collapsible sidebar, Windows 11 snap layouts, and keyboard shortcuts:
+
+  | Keys | Action |
+  |---|---|
+  | `Ctrl`+`1` / `2` / `3` | Network profiles / RJ45 port / Settings |
+  | `Ctrl`+`N` | New profile |
+  | `Ctrl`+`F` | Search profiles |
+  | `F5` | Refresh the current screen |
+  | `Ctrl`+`B` | Collapse / expand the sidebar |
+
+---
+
+## Good to know
+
+**Requirements.** Windows 10 (version 1903 or later) or Windows 11, 64-bit, and an
+administrator account. Everything else (.NET Framework 4.8, Windows PowerShell 5.1) is already
+part of Windows. Hyper-V is only needed for the virtual machine features.
+
+**Your data.** Profiles and settings are stored in `%APPDATA%\PONI\store.json` (with an
+automatic backup), the log in `%APPDATA%\PONI\logs\`. PONI never sends anything over the
+Internet.
+
+**What PONI changes, and what it never touches.** It changes the IP settings of the adapter
+you choose, and, only if you use the VM features, its own Hyper-V switch `RJ45-Switch`, the
+network adapters of your VMs and its own firewall rule `PONI-Ping-In` inside a VM. It never
+starts or stops a VM and never modifies your other switches or firewall rules.
+
+**Coming from PONI 1.0?** Just replace the old `PONI.exe`: your profiles are imported
+automatically on the first launch (the old file is left untouched).
+
+### Verify your download
+
+Each release lists the SHA-256 of `PONI.exe`. To compare, open PowerShell in the download
+folder:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\Build.ps1
+Get-FileHash .\PONI.exe -Algorithm SHA256
 ```
 
-`Build.ps1` pulls the `ps2exe` module if it's missing, embeds `assets/PONI_icon.png` as
-the in-app logo, takes the exe icon from `assets/PONI_icon.ico`, and compiles `PONI.ps1`
-into `PONI.exe` (`-requireAdmin -noConsole -STA -x64 -DPIAware`).
+---
 
-If Group Policy forces `RemoteSigned` and the script is blocked, run `Unblock-File .\Build.ps1` once.
+## For developers
 
-### Modify
+PONI 2 is written in C# / WPF on .NET Framework 4.8, with no third-party library, and ships
+as a single `PONI.exe`. Network reads use WMI; changes run the Windows PowerShell network and
+Hyper-V cmdlets in-process, from scripts embedded in the exe.
 
-Edit `PONI.ps1`, run `Build.ps1` again. That's the whole loop.
-`PONI.exe` is not committed; it ships as a Release asset.
+| Path | Content |
+|---|---|
+| `src/PONI/` | The application |
+| `src/PONI/Core/` | Models, validation, JSON, data file, v1 migration, import / export, sorting |
+| `src/PONI/Services/` | Network, Hyper-V, PowerShell host, theme, language, log |
+| `src/PONI/Scripts/` | PowerShell scripts embedded in the exe (every system change) |
+| `src/PONI/Themes/`, `Strings/` | Design system; English / French strings |
+| `tests/PONI.Tests/` | Unit tests (xUnit) |
+| `assets/` | Logo, icon, screenshots |
+
+**Build.** Requires the [.NET SDK](https://dotnet.microsoft.com/download) 8.0 or later, to
+build only:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\build.ps1                         # tests, then dist\PONI.exe + .sha256
+powershell -ExecutionPolicy Bypass -File .\build.ps1 -Configuration Debug    # runs without admin rights (UI work)
+```
+
+The Debug build refuses every system change, and the `PONI_DATA_DIR` environment variable
+points PONI to another data folder, so the UI can be worked on safely. GitHub Actions runs the
+tests and builds the exe on every push. See [CHANGELOG.md](CHANGELOG.md) for the history.
 
 ---
 

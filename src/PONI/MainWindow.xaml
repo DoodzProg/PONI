@@ -1,0 +1,284 @@
+﻿<Window x:Class="Poni.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:Poni.Controls"
+        xmlns:vm="clr-namespace:Poni.ViewModels"
+        xmlns:views="clr-namespace:Poni.Views"
+        xmlns:dialogs="clr-namespace:Poni.Views.Dialogs"
+        Title="PONI"
+        Width="1200" Height="760" MinWidth="980" MinHeight="640"
+        WindowStartupLocation="CenterScreen"
+        UseLayoutRounding="True"
+        FontFamily="{StaticResource FontText}" FontSize="14"
+        Background="{DynamicResource WindowBackgroundBrush}"
+        Foreground="{DynamicResource TextPrimaryBrush}">
+
+    <!-- Custom title bar: the content extends to the top edge (as in the mockups); Windows
+         still provides resizing, snapping, the shadow and (Windows 11) rounded corners. -->
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="36" ResizeBorderThickness="6" GlassFrameThickness="0"
+                      CornerRadius="0" UseAeroCaptionButtons="False"/>
+    </WindowChrome.WindowChrome>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:ProfilesViewModel}">
+            <views:ProfilesPage/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:Rj45ViewModel}">
+            <views:Rj45Page/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+            <views:SettingsPage/>
+        </DataTemplate>
+
+        <!-- In-window dialogs -->
+        <DataTemplate DataType="{x:Type vm:ConfirmDialogViewModel}">
+            <dialogs:ConfirmDialog/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ProfileEditorViewModel}">
+            <dialogs:ProfileEditorDialog/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ApplyDialogViewModel}">
+            <dialogs:ApplyDialog/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ExportSelectionViewModel}">
+            <dialogs:ExportSelectionDialog/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:VmCredentialsViewModel}">
+            <dialogs:VmCredentialsDialog/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:PhysicalAdapterDialogViewModel}">
+            <dialogs:PhysicalAdapterDialog/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:LogViewerViewModel}">
+            <dialogs:LogViewerDialog/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid x:Name="RootGrid">
+        <Grid.ColumnDefinitions>
+            <!-- Auto: the sidebar sets its own width (240 unfolded, 72 folded, animated in MainWindow.xaml.cs). -->
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ================================================= Sidebar -->
+        <Border x:Name="Sidebar" Grid.Column="0" Width="240" Background="{DynamicResource SidebarBackgroundBrush}" IsEnabled="{Binding IsPageInteractive}"
+                BorderBrush="{DynamicResource BorderSubtleBrush}" BorderThickness="0,0,1,0" ClipToBounds="True">
+            <Border.Resources>
+                <!-- Labels of the sidebar: gone when it is folded (c:Ui.Compact, set by MainWindow.xaml.cs). -->
+                <Style x:Key="SidebarLabel" TargetType="FrameworkElement">
+                    <Style.Triggers>
+                        <Trigger Property="c:Ui.Compact" Value="True">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Resources>
+            <DockPanel Margin="12,22,12,18">
+                <!-- Logo -->
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="2,0,2,24">
+                    <Border Width="42" Height="42" CornerRadius="11" Background="{DynamicResource LogoBackgroundBrush}"
+                            ToolTip="PONI">
+                        <Image Source="/Assets/poni-logo.png" Width="38" Height="38"
+                               RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </Border>
+                    <StackPanel Margin="11,0,0,0" VerticalAlignment="Center" Style="{StaticResource SidebarLabel}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="PONI" FontFamily="{StaticResource FontDisplay}" FontSize="20" FontWeight="Bold"/>
+                            <Border Margin="7,0,0,0" Padding="7,1" CornerRadius="6" VerticalAlignment="Center"
+                                    Background="{DynamicResource ChipBrush}">
+                                <TextBlock Text="{Binding VersionBadge}" FontSize="10.5" FontWeight="SemiBold"
+                                           Foreground="{DynamicResource TextSecondaryBrush}"/>
+                            </Border>
+                        </StackPanel>
+                        <TextBlock Text="{DynamicResource Str.App.Tagline}" FontSize="10.5"
+                                   Foreground="{DynamicResource TextSecondaryBrush}"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Links (bottom) -->
+                <DockPanel DockPanel.Dock="Bottom" Margin="4,12,4,0" LastChildFill="False" Style="{StaticResource SidebarLabel}">
+                    <Button DockPanel.Dock="Left" Style="{StaticResource LinkButton}" Content="GitHub"
+                            Command="{Binding OpenRepositoryCommand}" ToolTip="github.com/DoodzProg/PONI"/>
+                    <Button DockPanel.Dock="Right" Style="{StaticResource LinkButton}" Content="doodz.dev"
+                            Command="{Binding OpenAuthorCommand}"/>
+                </DockPanel>
+
+                <!-- Fold / unfold (also Ctrl+B) -->
+                <Button x:Name="SidebarToggle" DockPanel.Dock="Bottom" Command="{Binding ToggleSidebarCommand}"
+                        ToolTip="{Binding SidebarToggleText}" AutomationProperties.Name="{Binding SidebarToggleText}">
+                    <Button.Style>
+                        <Style TargetType="Button" BasedOn="{StaticResource GhostIconButton}">
+                            <Setter Property="Tag" Value="{StaticResource Icon.ChevronLeft}"/>
+                            <Setter Property="Margin" Value="6,10,0,0"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsSidebarCollapsed}" Value="True">
+                                    <Setter Property="Tag" Value="{StaticResource Icon.ChevronRight}"/>
+                                </DataTrigger>
+                                <Trigger Property="c:Ui.Compact" Value="True">
+                                    <Setter Property="Margin" Value="0,10,0,0"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <!-- Hyper-V status chip (click: settings) -->
+                <Button DockPanel.Dock="Bottom" Command="{Binding OpenSettingsCommand}" Cursor="Hand" Focusable="True"
+                        ToolTip="{Binding HyperV.ChipText}"
+                        AutomationProperties.Name="{Binding HyperV.ChipText}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border CornerRadius="12" Background="{DynamicResource SurfaceBrush}" Effect="{DynamicResource SmallShadow}"/>
+                                <Border CornerRadius="12" Background="{DynamicResource SurfaceBrush}" Padding="12,10">
+                                    <StackPanel x:Name="chipRow" Orientation="Horizontal">
+                                        <Ellipse x:Name="chipDot" Width="8" Height="8" Margin="0,0,8,0" VerticalAlignment="Center">
+                                            <Ellipse.Style>
+                                                <Style TargetType="Ellipse">
+                                                    <Setter Property="Fill" Value="{DynamicResource TextSecondaryBrush}"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding HyperV.IsEnabled}" Value="True">
+                                                            <Setter Property="Fill" Value="{DynamicResource SuccessBrush}"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Ellipse.Style>
+                                        </Ellipse>
+                                        <TextBlock x:Name="chipText" Text="{Binding HyperV.ChipText}" FontSize="12" Foreground="{DynamicResource TextSecondaryBrush}"/>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <!-- Folded sidebar: only the status dot (the text is in the tooltip). -->
+                                <Trigger Property="c:Ui.Compact" Value="True">
+                                    <Setter TargetName="chipText" Property="Visibility" Value="Collapsed"/>
+                                    <Setter TargetName="chipDot" Property="Margin" Value="0"/>
+                                    <Setter TargetName="chipRow" Property="HorizontalAlignment" Value="Center"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <!-- Navigation -->
+                <StackPanel AutomationProperties.Name="{DynamicResource Str.Nav.Label}">
+                    <RadioButton Style="{StaticResource NavItem}" GroupName="Nav" Tag="{StaticResource Icon.Profiles}"
+                                 Content="{DynamicResource Str.Nav.Profiles}"
+                                 IsChecked="{Binding CurrentPage, Converter={StaticResource EnumToBool}, ConverterParameter=Profiles}"/>
+                    <RadioButton Style="{StaticResource NavItem}" GroupName="Nav" Tag="{StaticResource Icon.Rj45}"
+                                 Content="{DynamicResource Str.Nav.Rj45}"
+                                 Visibility="{Binding HyperV.IsEnabled, Converter={StaticResource Visible}}"
+                                 IsChecked="{Binding CurrentPage, Converter={StaticResource EnumToBool}, ConverterParameter=Rj45}"/>
+                    <RadioButton Style="{StaticResource NavItem}" GroupName="Nav" Tag="{StaticResource Icon.Settings}"
+                                 Content="{DynamicResource Str.Nav.Settings}"
+                                 IsChecked="{Binding CurrentPage, Converter={StaticResource EnumToBool}, ConverterParameter=Settings}"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+
+        <!-- ================================================= Page -->
+        <ContentControl x:Name="PageHost" Grid.Column="1" Focusable="False" IsEnabled="{Binding IsPageInteractive}"
+                        Content="{Binding CurrentPageViewModel}">
+            <ContentControl.RenderTransform>
+                <TranslateTransform/>
+            </ContentControl.RenderTransform>
+        </ContentControl>
+
+        <!-- ================================================= Toast (bottom-left of the page) -->
+        <Grid Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="40,0,40,18" MaxWidth="720"
+              Visibility="{Binding ToastVisible, Converter={StaticResource Visible}}">
+            <Border CornerRadius="14" Background="{DynamicResource SurfaceBrush}" Effect="{DynamicResource CardShadow}"/>
+            <Border CornerRadius="14" Background="{DynamicResource SurfaceBrush}" Padding="12,9,8,9"
+                    BorderBrush="{DynamicResource BorderSubtleBrush}" BorderThickness="1">
+                <DockPanel>
+                    <Grid DockPanel.Dock="Left" Width="22" Height="22" Margin="0,0,10,0" VerticalAlignment="Top">
+                        <Border x:Name="ToastBadge" CornerRadius="11">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background" Value="{DynamicResource AccentBrush}"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ToastKind}" Value="Success">
+                                            <Setter Property="Background" Value="{DynamicResource SuccessBrush}"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ToastKind}" Value="Error">
+                                            <Setter Property="Background" Value="{DynamicResource ErrorBrush}"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ToastKind}" Value="Busy">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <c:Icon Width="12" Height="12" StrokeThickness="3.2" Foreground="White">
+                                <c:Icon.Style>
+                                    <Style TargetType="c:Icon" BasedOn="{StaticResource {x:Type c:Icon}}">
+                                        <Setter Property="Data" Value="{StaticResource Icon.Info}"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ToastKind}" Value="Success">
+                                                <Setter Property="Data" Value="{StaticResource Icon.Check}"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ToastKind}" Value="Error">
+                                                <Setter Property="Data" Value="{StaticResource Icon.Close}"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ToastKind}" Value="Busy">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </c:Icon.Style>
+                            </c:Icon>
+                        </Border>
+                        <c:Icon Width="20" Height="20" Foreground="{DynamicResource AccentBrush}">
+                            <c:Icon.Style>
+                                <Style TargetType="c:Icon" BasedOn="{StaticResource Spinner}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ToastKind}" Value="Busy">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </c:Icon.Style>
+                        </c:Icon>
+                    </Grid>
+                    <Button DockPanel.Dock="Right" Style="{StaticResource GhostIconButton}" Tag="{StaticResource Icon.Close}" Width="26" Height="26"
+                            VerticalAlignment="Top" Command="{Binding CloseToastCommand}" AutomationProperties.Name="{DynamicResource Str.Common.Close}"/>
+                    <Button DockPanel.Dock="Right" Style="{StaticResource LinkButton}" Content="{DynamicResource Str.Toast.Logs}" FontSize="13"
+                            FontWeight="SemiBold" Foreground="{DynamicResource AccentBrush}" VerticalAlignment="Top" Margin="8,0,2,0"
+                            Command="{Binding OpenLogsCommand}"/>
+                    <TextBlock DockPanel.Dock="Right" Text="{Binding ToastTime}" FontSize="12.5" Margin="10,2,0,0" VerticalAlignment="Top"
+                               Foreground="{DynamicResource TextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding ToastText}" FontSize="13" TextWrapping="Wrap" Margin="0,2,0,0" VerticalAlignment="Center"
+                               AutomationProperties.LiveSetting="Polite"/>
+                </DockPanel>
+            </Border>
+        </Grid>
+
+        <!-- ================================================= Dialog overlay (sheet over the dimmed window) -->
+        <Grid Grid.ColumnSpan="2" Background="{DynamicResource ScrimBrush}"
+              Visibility="{Binding HasDialog, Converter={StaticResource Visible}}">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding Dialog.DialogWidth}" Margin="24">
+                <Border CornerRadius="22" Background="{DynamicResource DialogBrush}" Effect="{DynamicResource DialogShadow}"/>
+                <Border CornerRadius="22" Background="{DynamicResource DialogBrush}" Padding="26,24,26,22"
+                        BorderBrush="{DynamicResource BorderSubtleBrush}" BorderThickness="1">
+                    <ContentControl Content="{Binding Dialog}" Focusable="False"/>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <!-- ================================================= Caption buttons -->
+        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top"
+                    WindowChrome.IsHitTestVisibleInChrome="True">
+            <Button x:Name="MinimizeButton" Style="{StaticResource CaptionButton}" Tag="{StaticResource Caption.Minimize}"
+                    AutomationProperties.Name="{DynamicResource Str.Caption.Minimize}" Click="OnMinimize"/>
+            <Button x:Name="MaximizeButton" Style="{StaticResource CaptionButton}" Tag="{StaticResource Caption.Maximize}"
+                    AutomationProperties.Name="{DynamicResource Str.Caption.Maximize}" Click="OnMaximizeRestore"/>
+            <Button x:Name="CloseButton" Style="{StaticResource CloseCaptionButton}" Tag="{StaticResource Caption.Close}"
+                    AutomationProperties.Name="{DynamicResource Str.Caption.Close}" Click="OnClose"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,15 +1,23 @@
 # Normalize line endings on commit; check out with the platform's native endings.
 * text=auto
 
-# Windows-only tooling: keep CRLF in the working tree so PowerShell / batch behave.
-*.ps1  text eol=crlf
-*.psm1 text eol=crlf
-*.psd1 text eol=crlf
-*.bat  text eol=crlf
-*.cmd  text eol=crlf
+# Windows-only tooling and .NET sources: keep CRLF in the working tree.
+*.ps1     text eol=crlf
+*.psm1    text eol=crlf
+*.psd1    text eol=crlf
+*.bat     text eol=crlf
+*.cmd     text eol=crlf
+*.cs      text eol=crlf
+*.xaml    text eol=crlf
+*.csproj  text eol=crlf
+*.sln     text eol=crlf
+*.props   text eol=crlf
+*.targets text eol=crlf
+*.manifest text eol=crlf
 
 # Plain-text project files: LF is fine.
 *.md          text eol=lf
+*.yml         text eol=lf
 *.gitignore   text eol=lf
 *.gitattributes text eol=lf
 LICENSE       text eol=lf

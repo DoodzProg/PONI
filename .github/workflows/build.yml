@@ -1,0 +1,29 @@
+# Builds PONI v2 on every push / pull request and keeps the single PONI.exe as a
+# downloadable workflow artifact (with its SHA-256).
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Unit tests + build (Release, single PONI.exe)
+        shell: pwsh
+        run: ./build.ps1 -Configuration Release
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PONI-${{ github.sha }}
+          path: |
+            dist/PONI.exe
+            dist/PONI.exe.sha256

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="76" viewBox="0 0 360 76" role="img" aria-label="Download PONI.exe">
+  <title>Download PONI.exe</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1A84F0"/>
+      <stop offset="1" stop-color="#0071E3"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="360" height="76" rx="22" fill="url(#bg)"/>
+  <!-- download arrow -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" transform="translate(34 20)">
+    <path d="M18 4 V26"/>
+    <path d="M9 17 L18 26 L27 17"/>
+    <path d="M5 34 H31"/>
+  </g>
+  <g font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" fill="#FFFFFF">
+    <text x="90" y="37" font-size="24" font-weight="700">Download PONI</text>
+    <text x="90" y="58" font-size="13.5" font-weight="400" fill-opacity="0.85">Latest version · Windows 10 / 11 · one .exe</text>
+  </g>
+</svg>

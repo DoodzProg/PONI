@@ -1,8 +1,18 @@
 # Build output. PONI.exe is distributed as a GitHub Release asset, not committed.
-/PONI.exe
+*.exe
+dist/
+bin/
+obj/
 
-# Temp file created by Build.ps1 during compilation.
+# v1 (PS2EXE) temp file created during compilation.
 PONI_build_*.ps1
+
+# IDE / tooling
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
 
 # Editor / OS cruft
 Thumbs.db
@@ -12,5 +22,3 @@ ehthumbs.db
 *.swp
 *~
 *.bak
-.vscode/
-.idea/

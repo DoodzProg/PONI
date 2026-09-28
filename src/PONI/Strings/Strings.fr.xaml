@@ -1,0 +1,376 @@
+﻿<!--
+  PONI - French strings. Strings.en.xaml MUST define exactly the same keys.
+  Used with {DynamicResource Str.*} (live language switch) or LocalizationService.Get("Str.*").
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="Str.App.Tagline">Plain Open Network Interface</sys:String>
+
+    <sys:String x:Key="Str.Nav.Label">Navigation principale</sys:String>
+    <sys:String x:Key="Str.Nav.Profiles">Profils réseau</sys:String>
+    <sys:String x:Key="Str.Nav.Rj45">Port RJ45</sys:String>
+    <sys:String x:Key="Str.Nav.Settings">Paramètres</sys:String>
+
+    <sys:String x:Key="Str.Caption.Minimize">Réduire</sys:String>
+    <sys:String x:Key="Str.Caption.Maximize">Agrandir</sys:String>
+    <sys:String x:Key="Str.Caption.Restore">Restaurer</sys:String>
+    <sys:String x:Key="Str.Caption.Close">Fermer</sys:String>
+
+    <sys:String x:Key="Str.Profiles.Title">Profils réseau</sys:String>
+    <sys:String x:Key="Str.Profiles.Subtitle">Basculez de configuration réseau en un clic.</sys:String>
+
+    <sys:String x:Key="Str.Rj45.Title">Port RJ45</sys:String>
+    <sys:String x:Key="Str.Rj45.Subtitle">Choisissez qui utilise le port réseau physique de ce PC : Windows ou une machine virtuelle.</sys:String>
+
+
+    <sys:String x:Key="Str.Settings.Title">Paramètres</sys:String>
+    <sys:String x:Key="Str.Settings.Subtitle">Langue, apparence et informations sur PONI.</sys:String>
+    <sys:String x:Key="Str.Settings.General">GÉNÉRAL</sys:String>
+    <sys:String x:Key="Str.Settings.Language">Langue</sys:String>
+    <sys:String x:Key="Str.Settings.Appearance">Apparence</sys:String>
+    <sys:String x:Key="Str.Settings.Theme.System">Système</sys:String>
+    <sys:String x:Key="Str.Settings.Theme.Light">Clair</sys:String>
+    <sys:String x:Key="Str.Settings.Theme.Dark">Sombre</sys:String>
+    <sys:String x:Key="Str.Settings.HyperV">MACHINES VIRTUELLES HYPER-V</sys:String>
+    <sys:String x:Key="Str.Settings.HyperV.Manage">Gérer les VMs et le port RJ45</sys:String>
+    <sys:String x:Key="Str.Settings.HyperV.Pending">Réglage disponible dans une prochaine étape du développement.</sys:String>
+    <sys:String x:Key="Str.Settings.About">À PROPOS</sys:String>
+    <sys:String x:Key="Str.Settings.About.Credits">Licence MIT · Créé par Doodz</sys:String>
+    <sys:String x:Key="Str.Settings.About.GitHub">Voir sur GitHub</sys:String>
+
+    <!-- ===== Commun ===== -->
+    <sys:String x:Key="Str.Common.Apply">Appliquer</sys:String>
+    <sys:String x:Key="Str.Common.Save">Enregistrer</sys:String>
+    <sys:String x:Key="Str.Common.Cancel">Annuler</sys:String>
+    <sys:String x:Key="Str.Common.Edit">Modifier</sys:String>
+    <sys:String x:Key="Str.Common.Duplicate">Dupliquer</sys:String>
+    <sys:String x:Key="Str.Common.Delete">Supprimer</sys:String>
+    <sys:String x:Key="Str.Common.Close">Fermer</sys:String>
+    <sys:String x:Key="Str.Common.MoreActions">Plus d’actions</sys:String>
+    <sys:String x:Key="Str.Toast.Logs">Journal</sys:String>
+
+    <!-- ===== Champs ===== -->
+    <sys:String x:Key="Str.Field.Name">Nom du profil</sys:String>
+    <sys:String x:Key="Str.Field.Ip">Adresse IP</sys:String>
+    <sys:String x:Key="Str.Field.Mask">Masque</sys:String>
+    <sys:String x:Key="Str.Field.MaskShort">Masque</sys:String>
+    <sys:String x:Key="Str.Field.Gateway">Passerelle (facultatif)</sys:String>
+    <sys:String x:Key="Str.Field.GatewayShort">Passerelle</sys:String>
+    <sys:String x:Key="Str.Field.Dns">Serveurs DNS (facultatif)</sys:String>
+    <sys:String x:Key="Str.Field.DnsShort">DNS</sys:String>
+    <sys:String x:Key="Str.Field.DnsHint">Plusieurs serveurs : séparez-les par une virgule. Vide = DNS automatique.</sys:String>
+    <sys:String x:Key="Str.Field.Mode">Attribution</sys:String>
+    <sys:String x:Key="Str.Field.Network">Réseau</sys:String>
+
+    <!-- ===== Écran Profils ===== -->
+    <sys:String x:Key="Str.Profiles.Search">Rechercher un profil</sys:String>
+    <sys:String x:Key="Str.Profiles.New">Nouveau profil</sys:String>
+    <sys:String x:Key="Str.Profiles.Mine">Mes profils</sys:String>
+    <sys:String x:Key="Str.Profiles.SimpleView">Simple</sys:String>
+    <sys:String x:Key="Str.Profiles.DetailedView">Détaillé</sys:String>
+    <sys:String x:Key="Str.Profiles.LastTarget">Dernière cible</sys:String>
+    <sys:String x:Key="Str.Profiles.NoMatch">Aucun profil ne correspond à cette recherche.</sys:String>
+    <sys:String x:Key="Str.Profiles.EmptyTitle">Aucun profil pour l’instant</sys:String>
+    <sys:String x:Key="Str.Profiles.EmptyText">Créez un profil pour chaque réseau que vous utilisez souvent, puis appliquez-le en un clic. Vous pouvez aussi importer des profils exportés depuis un autre PC.</sys:String>
+
+    <sys:String x:Key="Str.Machine.Title">Cette machine</sys:String>
+    <sys:String x:Key="Str.Machine.Reading">Lecture en cours…</sys:String>
+    <sys:String x:Key="Str.Machine.RefreshedAt">Actualisé à {0}</sys:String>
+    <sys:String x:Key="Str.Machine.ReadFailed">Impossible de lire la configuration réseau de ce PC (détails dans le journal).</sys:String>
+    <sys:String x:Key="Str.Machine.ShowVirtual">Afficher les cartes virtuelles ({0})</sys:String>
+    <sys:String x:Key="Str.Machine.HideVirtual">Masquer les cartes virtuelles ({0})</sys:String>
+    <sys:String x:Key="Str.Machine.Configure">Configurer…</sys:String>
+    <sys:String x:Key="Str.Machine.Dhcp">Repasser en automatique (DHCP)</sys:String>
+    <sys:String x:Key="Str.Machine.MakePrivate">Passer en réseau privé</sys:String>
+    <sys:String x:Key="Str.Machine.MakePublic">Passer en réseau public</sys:String>
+    <sys:String x:Key="Str.Machine.NothingToDo">Aucune action possible sur cette carte</sys:String>
+    <sys:String x:Key="Str.Machine.InternetBadge">Internet</sys:String>
+    <sys:String x:Key="Str.Machine.DuplicateBadge">Adresse en conflit</sys:String>
+
+    <sys:String x:Key="Str.Adapter.Connected">Connectée</sys:String>
+    <sys:String x:Key="Str.Adapter.Unplugged">Câble débranché</sys:String>
+    <sys:String x:Key="Str.Adapter.Disabled">Désactivée</sys:String>
+    <sys:String x:Key="Str.Adapter.NoIpv4">Pas de configuration IP (reliée à un commutateur Hyper-V ?)</sys:String>
+    <sys:String x:Key="Str.Adapter.Dhcp">DHCP</sys:String>
+    <sys:String x:Key="Str.Adapter.Manual">Manuelle</sys:String>
+    <sys:String x:Key="Str.Adapter.Private">Privé</sys:String>
+    <sys:String x:Key="Str.Adapter.Public">Public</sys:String>
+    <sys:String x:Key="Str.Adapter.Domain">Domaine (géré par l’entreprise)</sys:String>
+    <sys:String x:Key="Str.Adapter.NoNetwork">—</sys:String>
+
+    <sys:String x:Key="Str.Profile.Active">Actif</sys:String>
+    <sys:String x:Key="Str.Profile.Gateway">Passerelle {0}</sys:String>
+    <sys:String x:Key="Str.Profile.NoGateway">Sans passerelle</sys:String>
+    <sys:String x:Key="Str.Profile.Dns">DNS {0}</sys:String>
+    <sys:String x:Key="Str.Profile.AutoDns">DNS automatique</sys:String>
+    <sys:String x:Key="Str.Profile.NeverApplied">Jamais appliqué</sys:String>
+    <sys:String x:Key="Str.Profile.TargetHost">Hôte · {0}</sys:String>
+    <sys:String x:Key="Str.Profile.TargetVm">VM · {0}</sys:String>
+    <sys:String x:Key="Str.Profile.TargetVmAdapter">VM · {0} ({1})</sys:String>
+    <sys:String x:Key="Str.Profile.Created">Profil « {0} » créé.</sys:String>
+    <sys:String x:Key="Str.Profile.Updated">Profil « {0} » modifié.</sys:String>
+    <sys:String x:Key="Str.Profile.Deleted">Profil « {0} » supprimé.</sys:String>
+    <sys:String x:Key="Str.Profile.DeleteTitle">Supprimer le profil ?</sys:String>
+    <sys:String x:Key="Str.Profile.DeleteMessage">Le profil « {0} » sera supprimé définitivement. La configuration réseau actuelle du PC n’est pas modifiée.</sys:String>
+    <sys:String x:Key="Str.Profile.AppliedOn">Appliqué · {0}</sys:String>
+    <sys:String x:Key="Str.Profile.AppliedTooltip">Ce profil est la configuration actuelle de {0}, et cette carte est connectée : il est utilisé en ce moment.</sys:String>
+    <sys:String x:Key="Str.Profile.AppliedUnpluggedTooltip">Ce profil est la configuration actuelle de {0}, mais la carte est débranchée : il n’est pas utilisé pour l’instant.</sys:String>
+    <sys:String x:Key="Str.Transfer.Export">Exporter des profils</sys:String>
+    <sys:String x:Key="Str.Transfer.ExportSelection">Choisir les profils…</sys:String>
+    <sys:String x:Key="Str.Transfer.SelectTitle">Exporter des profils</sys:String>
+    <sys:String x:Key="Str.Transfer.SelectHint">Cochez les profils à mettre dans le fichier. Seuls le nom, l’IP, le masque, la passerelle et les DNS sont exportés : rien sur ce PC.</sys:String>
+    <sys:String x:Key="Str.Transfer.SelectAll">Tout sélectionner</sys:String>
+    <sys:String x:Key="Str.Transfer.SelectNone">Tout désélectionner</sys:String>
+    <sys:String x:Key="Str.Transfer.ExportCount">Exporter ({0})</sys:String>
+    <sys:String x:Key="Str.Time.Today">Aujourd’hui, {0}</sys:String>
+    <sys:String x:Key="Str.Time.Yesterday">Hier, {0}</sys:String>
+
+    <!-- ===== Éditeur ===== -->
+    <sys:String x:Key="Str.Editor.NewTitle">Nouveau profil</sys:String>
+    <sys:String x:Key="Str.Editor.EditTitle">Modifier le profil</sys:String>
+    <sys:String x:Key="Str.Editor.DuplicateTitle">Dupliquer le profil</sys:String>
+    <sys:String x:Key="Str.Editor.AdapterTitle">Configurer « {0} »</sys:String>
+    <sys:String x:Key="Str.Editor.CopyName">{0} (copie)</sys:String>
+    <sys:String x:Key="Str.Editor.FillFrom">Récupérer depuis…</sys:String>
+    <sys:String x:Key="Str.Editor.RiskWarning">C’est peut-être la carte qui vous connecte en ce moment : une valeur incorrecte peut couper la connexion. Si l’application échoue, l’ancienne configuration est rétablie.</sys:String>
+
+    <!-- ===== Appliquer ===== -->
+    <sys:String x:Key="Str.Apply.Title">Appliquer « {0} »</sys:String>
+    <sys:String x:Key="Str.Apply.ThisComputer">Cet ordinateur</sys:String>
+    <sys:String x:Key="Str.Apply.VirtualMachine">Machine virtuelle</sys:String>
+    <sys:String x:Key="Str.Apply.VmSoon">Disponible avec le module Hyper-V (prochaine étape du développement).</sys:String>
+    <sys:String x:Key="Str.Apply.Adapter">Carte réseau</sys:String>
+    <sys:String x:Key="Str.Apply.InternetBadge">Connexion Internet actuelle</sys:String>
+    <sys:String x:Key="Str.Apply.WifiBadge">Wi-Fi</sys:String>
+    <sys:String x:Key="Str.Apply.RiskWarning">Cette carte vous connecte peut-être à Internet ou au réseau de l’entreprise : une mauvaise valeur peut couper cette connexion.</sys:String>
+    <sys:String x:Key="Str.Apply.Rollback">La configuration actuelle de la carte est sauvegardée : si l’application échoue, PONI la rétablit automatiquement.</sys:String>
+    <sys:String x:Key="Str.Apply.NoRollback">Retour arrière automatique désactivé (voir Paramètres) : en cas d’échec, la carte peut rester sans configuration.</sys:String>
+
+    <!-- ===== Opérations réseau ===== -->
+    <sys:String x:Key="Str.Net.Applying">Application de « {0} » sur {1}…</sys:String>
+    <sys:String x:Key="Str.Net.ApplyingAdapter">Configuration de {0}…</sys:String>
+    <sys:String x:Key="Str.Net.Applied">Configuration appliquée et vérifiée sur {0}.</sys:String>
+    <sys:String x:Key="Str.Net.NeedsAdmin">PONI doit être lancé en tant qu’administrateur pour modifier la configuration réseau.</sys:String>
+    <sys:String x:Key="Str.Net.NoIpv4">« {0} » n’a pas de configuration IP : elle est sans doute reliée à une VM par le port RJ45.</sys:String>
+    <sys:String x:Key="Str.Net.Duplicate">L’adresse {0} est déjà utilisée par un autre appareil du réseau ({1}).</sys:String>
+    <sys:String x:Key="Str.Net.NotConfirmed.IP">L’adresse IP n’apparaît pas sur {0} après l’application.</sys:String>
+    <sys:String x:Key="Str.Net.NotConfirmed.Gateway">La passerelle n’a pas pu être confirmée sur {0}.</sys:String>
+    <sys:String x:Key="Str.Net.NotConfirmed.Dns">Les serveurs DNS n’ont pas pu être confirmés sur {0}.</sys:String>
+    <sys:String x:Key="Str.Net.NotConfirmed.Dhcp">Le mode automatique (DHCP) n’a pas pu être confirmé sur {0}.</sys:String>
+    <sys:String x:Key="Str.Net.Failed">Échec sur {0} : {1}</sys:String>
+    <sys:String x:Key="Str.Net.RolledBack">L’ancienne configuration a été rétablie.</sys:String>
+    <sys:String x:Key="Str.Net.RollbackFailed">Attention : l’ancienne configuration n’a pas pu être rétablie, vérifiez la carte (détails dans le journal).</sys:String>
+    <sys:String x:Key="Str.Net.DhcpTitle">Repasser en automatique ?</sys:String>
+    <sys:String x:Key="Str.Net.DhcpMessage">« {0} » va redemander une adresse automatiquement (DHCP). La configuration fixe actuelle sera retirée et la connexion sur cette carte sera brièvement coupée.</sys:String>
+    <sys:String x:Key="Str.Net.DhcpConfirm">Repasser en DHCP</sys:String>
+    <sys:String x:Key="Str.Net.DhcpWorking">Passage de {0} en DHCP…</sys:String>
+    <sys:String x:Key="Str.Net.DhcpDone">{0} est repassée en automatique (DHCP).</sys:String>
+    <sys:String x:Key="Str.Net.CategoryWorking">Changement du type de réseau de {0}…</sys:String>
+    <sys:String x:Key="Str.Net.CategoryPrivateDone">{0} : réseau privé.</sys:String>
+    <sys:String x:Key="Str.Net.CategoryPublicDone">{0} : réseau public.</sys:String>
+    <sys:String x:Key="Str.Net.CategoryDomain">{0} est sur un réseau d’entreprise (domaine) : Windows ne permet pas d’en changer le type.</sys:String>
+    <sys:String x:Key="Str.Net.CategoryNoNetwork">{0} n’est connectée à aucun réseau : son type ne peut pas être changé.</sys:String>
+    <sys:String x:Key="Str.Net.CategoryBlocked">Le type de réseau de {0} n’a pas changé : une stratégie de l’entreprise l’en empêche sans doute.</sys:String>
+
+    <!-- ===== Import / export ===== -->
+    <sys:String x:Key="Str.Transfer.Import">Importer des profils</sys:String>
+    <sys:String x:Key="Str.Transfer.ExportAll">Exporter tous les profils</sys:String>
+    <sys:String x:Key="Str.Transfer.ExportOne">Exporter</sys:String>
+    <sys:String x:Key="Str.Transfer.ImportTitle">Importer des profils PONI</sys:String>
+    <sys:String x:Key="Str.Transfer.ExportTitle">Exporter des profils PONI</sys:String>
+    <sys:String x:Key="Str.Transfer.Exported">{0} profil(s) exporté(s) dans {1}.</sys:String>
+    <sys:String x:Key="Str.Transfer.ExportFailed">Export impossible : {0}</sys:String>
+    <sys:String x:Key="Str.Transfer.Imported">{0} profil(s) importé(s), {1} ignoré(s) (détails dans le journal).</sys:String>
+    <sys:String x:Key="Str.Transfer.NothingFound">Aucun profil dans ce fichier.</sys:String>
+    <sys:String x:Key="Str.Transfer.NotAProfileFile">Ce fichier ne contient pas de profils PONI lisibles.</sys:String>
+    <sys:String x:Key="Str.Transfer.ImportFailed">Import impossible : {0}</sys:String>
+    <sys:String x:Key="Str.Store.SaveFailed">Les profils n’ont pas pu être enregistrés (détails dans le journal).</sys:String>
+
+    <!-- ===== Paramètres (application) ===== -->
+    <sys:String x:Key="Str.Settings.ApplyGroup">APPLICATION DES PROFILS</sys:String>
+    <sys:String x:Key="Str.Settings.SetPrivate">Passer le réseau en « Privé »</sys:String>
+    <sys:String x:Key="Str.Settings.SetPrivate.Caption">Désactivé : PONI ne modifie pas la catégorie Public / Privé du réseau (plus sûr sur un réseau inconnu).</sys:String>
+    <sys:String x:Key="Str.Settings.Rollback">Annuler automatiquement en cas d’échec</sys:String>
+    <sys:String x:Key="Str.Settings.Rollback.Caption">Restaure l’ancienne configuration si la nouvelle ne peut pas être appliquée.</sys:String>
+
+    <!-- ===== Hyper-V ===== -->
+    <sys:String x:Key="Str.Common.Refresh">Actualiser</sys:String>
+    <sys:String x:Key="Str.HyperV.ChipAbsent">Hyper-V absent</sys:String>
+    <sys:String x:Key="Str.HyperV.ChipOff">Hyper-V désactivé</sys:String>
+    <sys:String x:Key="Str.HyperV.ChipOn">Hyper-V actif</sys:String>
+    <sys:String x:Key="Str.HyperV.ChipVms">Hyper-V actif · {0} VM(s)</sys:String>
+    <sys:String x:Key="Str.HyperV.StatusAbsent">Hyper-V n’est pas installé sur ce PC (par exemple Windows Famille) : l’onglet Port RJ45 et la cible « VM » sont masqués.</sys:String>
+    <sys:String x:Key="Str.HyperV.StatusNoAccess">Hyper-V est installé, mais PONI ne peut pas le lire : lancez PONI en tant qu’administrateur.</sys:String>
+    <sys:String x:Key="Str.HyperV.StatusNoModule">Hyper-V est installé, mais son module PowerShell manque (fonctionnalité Windows « Module Hyper-V pour Windows PowerShell »).</sys:String>
+    <sys:String x:Key="Str.HyperV.StatusOn">Hyper-V détecté. Désactivé : l’onglet Port RJ45 et la cible « VM » sont masqués.</sys:String>
+    <sys:String x:Key="Str.HyperV.StatusOff">Désactivé : l’onglet Port RJ45 et la cible « VM » sont masqués, et PONI ne lit jamais Hyper-V.</sys:String>
+    <sys:String x:Key="Str.HyperV.DemoMode">Mode démonstration (Debug) : aucune modification n’est faite.</sys:String>
+    <sys:String x:Key="Str.Settings.Rj45Adapter">Carte physique du port RJ45</sys:String>
+    <sys:String x:Key="Str.Settings.Rj45Adapter.Caption">Modifiable quand le port est rendu à Windows.</sys:String>
+    <sys:String x:Key="Str.Settings.VmPing">Rendre les VMs joignables par ping</sys:String>
+    <sys:String x:Key="Str.Settings.VmPing.Caption">Quand un profil est appliqué dans une VM, PONI y autorise le ping venant du réseau local (sa propre règle de pare-feu « PONI-Ping-In »). Désactivé : PONI retire cette règle à la prochaine application.</sys:String>
+    <sys:String x:Key="Str.Settings.Diagnostics">DIAGNOSTIC</sys:String>
+    <sys:String x:Key="Str.Settings.Log">Journal de PONI</sys:String>
+    <sys:String x:Key="Str.Settings.Log.Caption">Tout ce que PONI a lu et modifié, jour par jour.</sys:String>
+    <sys:String x:Key="Str.Settings.Log.Open">Ouvrir</sys:String>
+
+    <sys:String x:Key="Str.Nav.Collapse">Replier la barre latérale (Ctrl+B)</sys:String>
+    <sys:String x:Key="Str.Nav.Expand">Déplier la barre latérale (Ctrl+B)</sys:String>
+
+    <sys:String x:Key="Str.Sort.Tooltip">Trier les profils : {0}</sys:String>
+    <sys:String x:Key="Str.Sort.NameAsc">Nom (A → Z)</sys:String>
+    <sys:String x:Key="Str.Sort.NameDesc">Nom (Z → A)</sys:String>
+    <sys:String x:Key="Str.Sort.CreatedAsc">Date de création (plus anciens d’abord)</sys:String>
+    <sys:String x:Key="Str.Sort.CreatedDesc">Date de création (plus récents d’abord)</sys:String>
+    <sys:String x:Key="Str.Sort.Custom">Personnalisé (glisser-déposer)</sys:String>
+    <sys:String x:Key="Str.Sort.MoveUp">Monter</sys:String>
+    <sys:String x:Key="Str.Sort.MoveDown">Descendre</sys:String>
+    <sys:String x:Key="Str.Sort.DragHint">Glisser pour déplacer ce profil</sys:String>
+    <sys:String x:Key="Str.Log.Title">Journal</sys:String>
+    <sys:String x:Key="Str.Log.Subtitle">Ce que PONI a fait, jour par jour. Conservé {0} jours, uniquement sur ce PC.</sys:String>
+    <sys:String x:Key="Str.Log.All">Tout</sys:String>
+    <sys:String x:Key="Str.Log.Problems">Problèmes</sys:String>
+    <sys:String x:Key="Str.Log.Today">Aujourd’hui</sys:String>
+    <sys:String x:Key="Str.Log.Yesterday">Hier</sys:String>
+    <sys:String x:Key="Str.Log.Older">Jour précédent</sys:String>
+    <sys:String x:Key="Str.Log.Newer">Jour suivant</sys:String>
+    <sys:String x:Key="Str.Log.Refresh">Actualiser</sys:String>
+    <sys:String x:Key="Str.Log.Count">{0} lignes · {1} avertissement(s) · {2} erreur(s)</sys:String>
+    <sys:String x:Key="Str.Log.Empty">Aucune ligne pour ce jour.</sys:String>
+    <sys:String x:Key="Str.Log.NoProblem">Aucun avertissement ni aucune erreur ce jour-là.</sys:String>
+    <sys:String x:Key="Str.Log.Copy">Copier</sys:String>
+    <sys:String x:Key="Str.Log.Copied">Copié</sys:String>
+    <sys:String x:Key="Str.Log.OpenFolder">Ouvrir le dossier</sys:String>
+    <sys:String x:Key="Str.Log.Info">Info</sys:String>
+    <sys:String x:Key="Str.Log.Warn">Attention</sys:String>
+    <sys:String x:Key="Str.Log.Error">Erreur</sys:String>
+
+    <sys:String x:Key="Str.VmState.Running">En marche</sys:String>
+    <sys:String x:Key="Str.VmState.Off">Arrêtée</sys:String>
+    <sys:String x:Key="Str.VmState.Saved">Enregistrée</sys:String>
+    <sys:String x:Key="Str.VmState.Paused">Suspendue</sys:String>
+    <sys:String x:Key="Str.VmState.Starting">Démarrage…</sys:String>
+    <sys:String x:Key="Str.VmState.Stopping">Arrêt…</sys:String>
+
+    <sys:String x:Key="Str.Rj45.DanglingTitle">Des VMs ne peuvent pas démarrer</sys:String>
+    <sys:String x:Key="Str.Rj45.DanglingText">Ces cartes réseau pointent encore vers un commutateur qui a été supprimé. Hyper-V refuse alors de démarrer la VM, avec un message trompeur « Ressources système insuffisantes ».</sys:String>
+    <sys:String x:Key="Str.Rj45.Repair">Réparer</sys:String>
+    <sys:String x:Key="Str.Rj45.RepairTitle">Réparer les cartes des VMs ?</sys:String>
+    <sys:String x:Key="Str.Rj45.RepairMessage">Ces cartes seront simplement débranchées (elles ne mènent nulle part) :&#x0a;&#x0a;{0}&#x0a;&#x0a;Aucun commutateur n’est créé ni supprimé, et les cartes reliées à un commutateur existant ne sont pas touchées.</sys:String>
+    <sys:String x:Key="Str.Rj45.Repairing">Réparation des cartes des VMs…</sys:String>
+    <sys:String x:Key="Str.Rj45.RepairDone">{0} carte(s) réparée(s) : les VMs peuvent de nouveau démarrer.</sys:String>
+    <sys:String x:Key="Str.Rj45.RepairIncomplete">{0} carte(s) pointent encore vers un commutateur supprimé (détails dans le journal).</sys:String>
+    <sys:String x:Key="Str.Rj45.Reading">Lecture d’Hyper-V…</sys:String>
+    <sys:String x:Key="Str.Rj45.HostName">Windows (hôte)</sys:String>
+    <sys:String x:Key="Str.Rj45.HostSub">Ce PC · carte {0}</sys:String>
+    <sys:String x:Key="Str.Rj45.HostSubShort">Ce PC</sys:String>
+    <sys:String x:Key="Str.Rj45.VmSubAdapter">Carte {0}</sys:String>
+    <sys:String x:Key="Str.Rj45.VmSubNone">Carte ajoutée au besoin</sys:String>
+    <sys:String x:Key="Str.Rj45.Nobody">Personne</sys:String>
+    <sys:String x:Key="Str.Rj45.NoPhysical">(aucune carte filaire)</sys:String>
+    <sys:String x:Key="Str.Rj45.LinkedHere">Relié ici</sys:String>
+    <sys:String x:Key="Str.Rj45.Available">Disponible</sys:String>
+    <sys:String x:Key="Str.Rj45.CurrentDestination">Destination actuelle</sys:String>
+    <sys:String x:Key="Str.Rj45.GiveToWindows">Rendre à Windows</sys:String>
+    <sys:String x:Key="Str.Rj45.LinkHere">Relier ici</sys:String>
+    <sys:String x:Key="Str.Rj45.ChangePhysical">Changer de carte physique…</sys:String>
+    <sys:String x:Key="Str.Rj45.ChangeOnlyOnHost">Rendez d’abord le port à Windows pour changer de carte physique.</sys:String>
+    <sys:String x:Key="Str.Rj45.Destinations">Destinations</sys:String>
+    <sys:String x:Key="Str.Rj45.OneAtATime">Une seule destination à la fois. PONI ne démarre ni n’arrête aucune VM.</sys:String>
+    <sys:String x:Key="Str.Rj45.PillOk">Vérifié dans Hyper-V à {0}</sys:String>
+    <sys:String x:Key="Str.Rj45.PillAnomaly">À corriger · vérifié à {0}</sys:String>
+    <sys:String x:Key="Str.Rj45.TitleHost">Le port est relié à Windows</sys:String>
+    <sys:String x:Key="Str.Rj45.TitleVm">Le port est relié à la VM « {0} »</sys:String>
+    <sys:String x:Key="Str.Rj45.TitleShared">Le port est partagé entre plusieurs VMs</sys:String>
+    <sys:String x:Key="Str.Rj45.TitleOrphan">Le port n’est utilisé par personne</sys:String>
+    <sys:String x:Key="Str.Rj45.TextHost">La carte {0} sert à ce PC, comme d’habitude. Choisissez une VM ci-dessous pour lui donner le port : PONI crée tout seul le commutateur RJ45-Switch et la carte RJ45-Adapter dans la VM.</sys:String>
+    <sys:String x:Key="Str.Rj45.TextVm">Windows n’a plus de réseau sur la carte {0} tant que ce lien est actif. PONI retire le commutateur quand vous rendez le port à Windows.</sys:String>
+    <sys:String x:Key="Str.Rj45.TextShared">Plusieurs VMs sont reliées au port en même temps (ce que faisait parfois la v1). Choisissez-en une ci-dessous : les autres seront débranchées, ou rendez le port à Windows.</sys:String>
+    <sys:String x:Key="Str.Rj45.TextOrphan">Le commutateur RJ45-Switch existe mais aucune VM ne l’utilise : Windows a perdu la carte {0} pour rien. Rendez le port à Windows ou choisissez une VM.</sys:String>
+    <sys:String x:Key="Str.Rj45.Switching">Basculement du port RJ45…</sys:String>
+    <sys:String x:Key="Str.Rj45.ToHostTitle">Rendre le port à Windows ?</sys:String>
+    <sys:String x:Key="Str.Rj45.ToHostMessage">Le commutateur RJ45-Switch sera supprimé et la carte {0} reviendra à Windows. Destination actuelle : {1}, qui n’aura plus accès au réseau par ce port.</sys:String>
+    <sys:String x:Key="Str.Rj45.ToVmTitle">Relier le port à cette VM ?</sys:String>
+    <sys:String x:Key="Str.Rj45.ToVmMessage">Le port RJ45 (carte {0}) sera relié à la VM « {1} ». Windows n’aura plus de réseau sur cette carte tant qu’il y sera relié.</sys:String>
+    <sys:String x:Key="Str.Rj45.ToVmLoses">La VM « {0} » perdra le port (sa carte sera débranchée).</sys:String>
+    <sys:String x:Key="Str.Rj45.ToVmStopped">Cette VM est arrêtée : le port sera prêt à son prochain démarrage.</sys:String>
+    <sys:String x:Key="Str.Rj45.ToVmDone">Port RJ45 relié à la VM « {0} » — vérifié dans Hyper-V. Si la carte n’apparaît pas dans la VM, redémarrez-la.</sys:String>
+    <sys:String x:Key="Str.Rj45.ToHostDone">Port RJ45 rendu à Windows — commutateur supprimé et vérifié.</sys:String>
+    <sys:String x:Key="Str.Rj45.ToHostNotConfirmed">Le commutateur RJ45-Switch est toujours là après la suppression (détails dans le journal).</sys:String>
+    <sys:String x:Key="Str.Rj45.VmMissing">La VM « {0} » n’existe plus.</sys:String>
+    <sys:String x:Key="Str.Rj45.PhysicalMissing">La carte « {0} » est introuvable : choisissez la carte physique du port RJ45.</sys:String>
+    <sys:String x:Key="Str.Rj45.PhysicalDisabled">La carte « {0} » est désactivée dans Windows : réactivez-la d’abord.</sys:String>
+    <sys:String x:Key="Str.Rj45.SwitchOnOtherAdapter">Le commutateur RJ45-Switch utilise une autre carte ({0}). Rendez d’abord le port à Windows.</sys:String>
+    <sys:String x:Key="Str.Rj45.AdapterUsedByOtherSwitch">La carte « {0} » est déjà utilisée par votre commutateur « {1} ». PONI n’y touche pas : choisissez une autre carte physique.</sys:String>
+    <sys:String x:Key="Str.Rj45.NotConfirmed">Le lien avec la VM « {0} » n’a pas pu être confirmé dans Hyper-V (détails dans le journal).</sys:String>
+    <sys:String x:Key="Str.Rj45.Failed">Échec du basculement : {0}</sys:String>
+    <sys:String x:Key="Str.Rj45.NoPhysicalError">Aucune carte filaire n’est disponible pour le port RJ45.</sys:String>
+    <sys:String x:Key="Str.Rj45.PhysicalTitle">Carte physique du port RJ45</sys:String>
+    <sys:String x:Key="Str.Rj45.PhysicalHint">La carte réseau filaire qui correspond à la prise RJ45 que vous voulez donner aux VMs.</sys:String>
+    <sys:String x:Key="Str.Rj45.WifiNotSuitable">Wi-Fi : ne convient pas comme port pour une VM.</sys:String>
+    <sys:String x:Key="Str.Rj45.PhysicalChanged">Carte physique du port RJ45 : {0}.</sys:String>
+    <sys:String x:Key="Str.Rj45.ReleaseTitle">Rendre le port RJ45 à Windows ?</sys:String>
+    <sys:String x:Key="Str.Rj45.ReleaseMessage">La carte « {0} » est actuellement le port RJ45 d’une VM : Windows ne peut pas la configurer. Rendre le port à Windows maintenant, puis appliquer le profil ?</sys:String>
+    <sys:String x:Key="Str.Rj45.ReleaseConfirm">Rendre et appliquer</sys:String>
+    <sys:String x:Key="Str.Rj45.NotBackYet">Le port est rendu à Windows, mais « {0} » n’est pas encore prête : réessayez dans quelques secondes.</sys:String>
+
+    <sys:String x:Key="Str.Apply.Preparing">Lecture de la configuration réseau et d’Hyper-V…</sys:String>
+    <sys:String x:Key="Str.Apply.VmNoSwitch">Cette carte n’est reliée à aucun commutateur : l’IP sera bien enregistrée, mais la carte restera « Média déconnecté » dans la VM (et ipconfig n’affichera pas l’IP) tant qu’elle n’est pas branchée, par exemple en reliant le port RJ45 à cette VM.</sys:String>
+    <sys:String x:Key="Str.Apply.VmOff">Module Hyper-V désactivé ou indisponible (voir Paramètres).</sys:String>
+    <sys:String x:Key="Str.Apply.VmTabHint">Appliquer dans une machine virtuelle démarrée.</sys:String>
+    <sys:String x:Key="Str.Apply.VmRunningOnly">Seules les VMs démarrées peuvent recevoir un profil : PONI ne démarre ni n’arrête aucune VM.</sys:String>
+    <sys:String x:Key="Str.Apply.NoRunningVm">Aucune VM n’est démarrée. Démarrez la VM voulue (Gestionnaire Hyper-V), puis rouvrez cette fenêtre.</sys:String>
+    <sys:String x:Key="Str.Apply.Vm">Machine virtuelle</sys:String>
+    <sys:String x:Key="Str.Apply.VmAdapter">Carte réseau de la VM</sys:String>
+    <sys:String x:Key="Str.Apply.VmAdapterOnSwitch">Sur le commutateur {0}</sys:String>
+    <sys:String x:Key="Str.Apply.VmAdapterNoSwitch">Reliée à aucun commutateur</sys:String>
+    <sys:String x:Key="Str.Apply.VmPingOn">La VM répondra au ping du réseau local (règle de pare-feu PONI, réglable dans Paramètres).</sys:String>
+    <sys:String x:Key="Str.Apply.VmPingOff">Ping non autorisé : PONI retirera sa règle de pare-feu dans la VM (réglable dans Paramètres).</sys:String>
+    <sys:String x:Key="Str.Apply.VmMacInfo">Dans la VM, la carte est retrouvée par son adresse MAC : son nom Windows (« Ethernet N ») n’a pas d’importance.</sys:String>
+    <sys:String x:Key="Str.Apply.Rj45Badge">Port RJ45</sys:String>
+    <sys:String x:Key="Str.Apply.Rj45HeldBy">Port RJ45 relié à la VM {0} : il sera rendu à Windows avant d’appliquer.</sys:String>
+    <sys:String x:Key="Str.Apply.Rj45Orphan">Port RJ45 retenu par un commutateur inutilisé : il sera rendu à Windows avant d’appliquer.</sys:String>
+    <sys:String x:Key="Str.Apply.Rj45ReleaseInfo">Cette carte est le port RJ45, actuellement donné à une VM. PONI le rendra d’abord à Windows (la VM perd ce réseau), puis appliquera le profil.</sys:String>
+
+    <sys:String x:Key="Str.Vm.CredTitle">Connexion à la VM « {0} »</sys:String>
+    <sys:String x:Key="Str.Vm.CredHint">Un compte administrateur À L’INTÉRIEUR de la VM (PowerShell Direct : fonctionne même si la VM n’a pas encore de réseau).</sys:String>
+    <sys:String x:Key="Str.Vm.CredUser">Utilisateur</sys:String>
+    <sys:String x:Key="Str.Vm.CredPassword">Mot de passe</sys:String>
+    <sys:String x:Key="Str.Vm.CredPrivacy">Le mot de passe n’est jamais enregistré. Seul le nom d’utilisateur est retenu, et seulement après une connexion réussie.</sys:String>
+    <sys:String x:Key="Str.Vm.CredConnect">Appliquer</sys:String>
+    <sys:String x:Key="Str.Vm.Applying">Application de « {0} » dans la VM « {1} »…</sys:String>
+    <sys:String x:Key="Str.Vm.Applied">Configuration appliquée et vérifiée dans la VM « {0} ».</sys:String>
+    <sys:String x:Key="Str.Vm.AppliedPing">Configuration appliquée et vérifiée dans la VM « {0} ». Elle répond au ping du réseau local.</sys:String>
+    <sys:String x:Key="Str.Vm.AppliedPingFailed">Configuration appliquée et vérifiée dans la VM « {0} », mais le ping n’a pas pu y être autorisé : {1}</sys:String>
+    <sys:String x:Key="Str.Vm.Missing">La VM « {0} » n’existe plus.</sys:String>
+    <sys:String x:Key="Str.Vm.NotRunning">La VM « {0} » n’est plus démarrée. Démarrez-la, puis réessayez.</sys:String>
+    <sys:String x:Key="Str.Vm.Session">Connexion impossible à la VM « {0} » (identifiants incorrects, ou VM pas encore prête) : {1}</sys:String>
+    <sys:String x:Key="Str.Vm.AdapterNotFound">La carte « {0} » est introuvable dans la VM « {1} » : si elle vient d’être ajoutée, redémarrez la VM.</sys:String>
+    <sys:String x:Key="Str.Vm.Duplicate">L’adresse est déjà utilisée par un autre appareil du réseau de la VM « {0} ».</sys:String>
+    <sys:String x:Key="Str.Vm.Failed">Échec dans la VM « {0} » : {1}</sys:String>
+    <!-- Validation (formulaire, import, migration). {0}, {1}... = arguments. -->
+    <sys:String x:Key="Str.Val.NameRequired">Le nom du profil est obligatoire.</sys:String>
+    <sys:String x:Key="Str.Val.NameTooLong">Le nom du profil ne doit pas dépasser {0} caractères.</sys:String>
+    <sys:String x:Key="Str.Val.NameExists">Un profil « {0} » existe déjà.</sys:String>
+    <sys:String x:Key="Str.Val.IpInvalid">Adresse IP invalide (exemple : 192.168.1.10).</sys:String>
+    <sys:String x:Key="Str.Val.IpReserved">L’adresse {0} est réservée et ne peut pas être attribuée à une carte réseau.</sys:String>
+    <sys:String x:Key="Str.Val.IpIsNetwork">{0} est l’adresse du réseau /{1} lui-même, pas une adresse d’ordinateur.</sys:String>
+    <sys:String x:Key="Str.Val.IpIsBroadcast">{0} est l’adresse de diffusion du réseau /{1}, pas une adresse d’ordinateur.</sys:String>
+    <sys:String x:Key="Str.Val.IpApipa">Adresse 169.254.x.x : c’est une adresse automatique de secours de Windows, rarement voulue en fixe.</sys:String>
+    <sys:String x:Key="Str.Val.MaskInvalid">Masque invalide (exemple : 255.255.255.0 ou 24).</sys:String>
+    <sys:String x:Key="Str.Val.GatewayInvalid">Passerelle invalide.</sys:String>
+    <sys:String x:Key="Str.Val.GatewayEqualsIp">La passerelle ne peut pas être l’adresse IP elle-même.</sys:String>
+    <sys:String x:Key="Str.Val.GatewayOutsideSubnet">La passerelle {0} n’est pas dans le réseau {1}/{2} : Internet risque de ne pas fonctionner.</sys:String>
+    <sys:String x:Key="Str.Val.DnsInvalid">DNS invalide : « {0} » n’est pas une adresse IPv4.</sys:String>
+    <sys:String x:Key="Str.Val.NotAnObject">Entrée illisible.</sys:String>
+
+    <!-- Fichier de données -->
+    <sys:String x:Key="Str.Store.RecoveredFromBackup">Le fichier des profils était illisible. PONI a restauré la dernière sauvegarde automatique.&#x0a;&#x0a;Le fichier abîmé a été conservé ici :&#x0a;{0}</sys:String>
+    <sys:String x:Key="Str.Store.RecoveredEmpty">Le fichier des profils était illisible et aucune sauvegarde n’a pu être lue. PONI repart d’une liste vide.&#x0a;&#x0a;Le fichier abîmé a été conservé ici :&#x0a;{0}</sys:String>
+
+    <sys:String x:Key="Str.Error.Title">PONI - erreur inattendue</sys:String>
+    <sys:String x:Key="Str.Error.Message">Une erreur inattendue s’est produite. PONI reste ouvert, mais l’action en cours a été interrompue.</sys:String>
+
+</ResourceDictionary>

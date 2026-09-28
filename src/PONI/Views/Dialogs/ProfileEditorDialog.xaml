@@ -1,0 +1,88 @@
+<UserControl x:Class="Poni.Views.Dialogs.ProfileEditorDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:Poni.Controls">
+    <StackPanel>
+        <DockPanel Margin="0,0,0,18">
+            <Button DockPanel.Dock="Right" Style="{StaticResource SmallSecondaryButton}" c:Ui.OpensMenu="True" VerticalAlignment="Center"
+                    Visibility="{Binding HasSourceAdapters, Converter={StaticResource Visible}}">
+                <StackPanel Orientation="Horizontal">
+                    <c:Icon Data="{StaticResource Icon.Import}" Width="13" Height="13" StrokeThickness="2.2" Margin="0,0,6,0"
+                            Foreground="{DynamicResource TextPrimaryBrush}"/>
+                    <TextBlock Text="{DynamicResource Str.Editor.FillFrom}"/>
+                </StackPanel>
+                <Button.ContextMenu>
+                    <ContextMenu ItemsSource="{Binding SourceAdapters}">
+                        <ContextMenu.ItemContainerStyle>
+                            <Style TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
+                                <Setter Property="Header" Value="{Binding Name}"/>
+                                <Setter Property="Command" Value="{Binding DataContext.FillFromCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}"/>
+                                <Setter Property="CommandParameter" Value="{Binding}"/>
+                            </Style>
+                        </ContextMenu.ItemContainerStyle>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+            <TextBlock Text="{Binding Title}" FontFamily="{StaticResource FontDisplay}" FontSize="20" FontWeight="Bold"
+                       VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+        </DockPanel>
+
+        <!-- Risky adapter (the one keeping the PC online, or Wi-Fi) -->
+        <Border CornerRadius="12" Padding="12,10" Margin="0,0,0,16" Background="{DynamicResource WarningBackgroundBrush}"
+                Visibility="{Binding ShowRiskWarning, Converter={StaticResource Visible}}">
+            <DockPanel>
+                <c:Icon Data="{StaticResource Icon.Warning}" Width="16" Height="16" StrokeThickness="2" Margin="0,1,10,0"
+                        VerticalAlignment="Top" Foreground="{DynamicResource WarningBrush}"/>
+                <TextBlock Text="{DynamicResource Str.Editor.RiskWarning}" FontSize="12.5" TextWrapping="Wrap" Foreground="{DynamicResource WarningBrush}"/>
+            </DockPanel>
+        </Border>
+
+        <StackPanel Margin="0,0,0,14" Visibility="{Binding ShowName, Converter={StaticResource Visible}}">
+            <TextBlock Text="{DynamicResource Str.Field.Name}" Style="{StaticResource FieldLabel}"/>
+            <TextBox x:Name="NameBox" Style="{StaticResource TextField}" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                     AutomationProperties.Name="{DynamicResource Str.Field.Name}"/>
+            <TextBlock Style="{StaticResource FieldMessage}" Text="{Binding NameMessage}"/>
+        </StackPanel>
+
+        <Grid Margin="0,0,0,14">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="14"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock Text="{DynamicResource Str.Field.Ip}" Style="{StaticResource FieldLabel}"/>
+                <TextBox x:Name="IpBox" Style="{StaticResource TextField}" Text="{Binding IPAddress, UpdateSourceTrigger=PropertyChanged}"
+                         AutomationProperties.Name="{DynamicResource Str.Field.Ip}"/>
+                <TextBlock Style="{StaticResource FieldMessage}" Text="{Binding IpMessage}" Tag="{Binding IpIsWarning}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="{DynamicResource Str.Field.Mask}" Style="{StaticResource FieldLabel}"/>
+                <TextBox Style="{StaticResource TextField}" Text="{Binding Mask, UpdateSourceTrigger=PropertyChanged}"
+                         AutomationProperties.Name="{DynamicResource Str.Field.Mask}"/>
+                <TextBlock Style="{StaticResource FieldMessage}" Text="{Binding MaskMessage}"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Margin="0,0,0,14">
+            <TextBlock Text="{DynamicResource Str.Field.Gateway}" Style="{StaticResource FieldLabel}"/>
+            <TextBox Style="{StaticResource TextField}" Text="{Binding Gateway, UpdateSourceTrigger=PropertyChanged}"
+                     AutomationProperties.Name="{DynamicResource Str.Field.Gateway}"/>
+            <TextBlock Style="{StaticResource FieldMessage}" Text="{Binding GatewayMessage}" Tag="{Binding GatewayIsWarning}"/>
+        </StackPanel>
+
+        <StackPanel Margin="0,0,0,24">
+            <TextBlock Text="{DynamicResource Str.Field.Dns}" Style="{StaticResource FieldLabel}"/>
+            <TextBox Style="{StaticResource TextField}" Text="{Binding Dns, UpdateSourceTrigger=PropertyChanged}"
+                     AutomationProperties.Name="{DynamicResource Str.Field.Dns}"/>
+            <TextBlock Style="{StaticResource FieldMessage}" Text="{Binding DnsMessage}"/>
+            <TextBlock Text="{DynamicResource Str.Field.DnsHint}" FontSize="12" Margin="4,5,0,0" Foreground="{DynamicResource TextSecondaryBrush}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Style="{StaticResource SecondaryButton}" Content="{DynamicResource Str.Common.Cancel}" Command="{Binding CancelCommand}"
+                    IsCancel="True" Margin="0,0,10,0"/>
+            <Button Style="{StaticResource PrimaryButton}" Content="{Binding SaveText}" Command="{Binding SaveCommand}" IsDefault="True"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

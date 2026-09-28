@@ -1,0 +1,375 @@
+﻿<!--
+  PONI - English strings. Strings.fr.xaml MUST define exactly the same keys.
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="Str.App.Tagline">Plain Open Network Interface</sys:String>
+
+    <sys:String x:Key="Str.Nav.Label">Main navigation</sys:String>
+    <sys:String x:Key="Str.Nav.Profiles">Network profiles</sys:String>
+    <sys:String x:Key="Str.Nav.Rj45">RJ45 port</sys:String>
+    <sys:String x:Key="Str.Nav.Settings">Settings</sys:String>
+
+    <sys:String x:Key="Str.Caption.Minimize">Minimize</sys:String>
+    <sys:String x:Key="Str.Caption.Maximize">Maximize</sys:String>
+    <sys:String x:Key="Str.Caption.Restore">Restore</sys:String>
+    <sys:String x:Key="Str.Caption.Close">Close</sys:String>
+
+    <sys:String x:Key="Str.Profiles.Title">Network profiles</sys:String>
+    <sys:String x:Key="Str.Profiles.Subtitle">Switch network configuration in one click.</sys:String>
+
+    <sys:String x:Key="Str.Rj45.Title">RJ45 port</sys:String>
+    <sys:String x:Key="Str.Rj45.Subtitle">Choose who uses this PC's physical network port: Windows or a virtual machine.</sys:String>
+
+
+    <sys:String x:Key="Str.Settings.Title">Settings</sys:String>
+    <sys:String x:Key="Str.Settings.Subtitle">Language, appearance and information about PONI.</sys:String>
+    <sys:String x:Key="Str.Settings.General">GENERAL</sys:String>
+    <sys:String x:Key="Str.Settings.Language">Language</sys:String>
+    <sys:String x:Key="Str.Settings.Appearance">Appearance</sys:String>
+    <sys:String x:Key="Str.Settings.Theme.System">System</sys:String>
+    <sys:String x:Key="Str.Settings.Theme.Light">Light</sys:String>
+    <sys:String x:Key="Str.Settings.Theme.Dark">Dark</sys:String>
+    <sys:String x:Key="Str.Settings.HyperV">HYPER-V VIRTUAL MACHINES</sys:String>
+    <sys:String x:Key="Str.Settings.HyperV.Manage">Manage VMs and the RJ45 port</sys:String>
+    <sys:String x:Key="Str.Settings.HyperV.Pending">Setting available in an upcoming development step.</sys:String>
+    <sys:String x:Key="Str.Settings.About">ABOUT</sys:String>
+    <sys:String x:Key="Str.Settings.About.Credits">MIT License · Made by Doodz</sys:String>
+    <sys:String x:Key="Str.Settings.About.GitHub">View on GitHub</sys:String>
+
+    <!-- ===== Common ===== -->
+    <sys:String x:Key="Str.Common.Apply">Apply</sys:String>
+    <sys:String x:Key="Str.Common.Save">Save</sys:String>
+    <sys:String x:Key="Str.Common.Cancel">Cancel</sys:String>
+    <sys:String x:Key="Str.Common.Edit">Edit</sys:String>
+    <sys:String x:Key="Str.Common.Duplicate">Duplicate</sys:String>
+    <sys:String x:Key="Str.Common.Delete">Delete</sys:String>
+    <sys:String x:Key="Str.Common.Close">Close</sys:String>
+    <sys:String x:Key="Str.Common.MoreActions">More actions</sys:String>
+    <sys:String x:Key="Str.Toast.Logs">Log</sys:String>
+
+    <!-- ===== Fields ===== -->
+    <sys:String x:Key="Str.Field.Name">Profile name</sys:String>
+    <sys:String x:Key="Str.Field.Ip">IP address</sys:String>
+    <sys:String x:Key="Str.Field.Mask">Subnet mask</sys:String>
+    <sys:String x:Key="Str.Field.MaskShort">Mask</sys:String>
+    <sys:String x:Key="Str.Field.Gateway">Gateway (optional)</sys:String>
+    <sys:String x:Key="Str.Field.GatewayShort">Gateway</sys:String>
+    <sys:String x:Key="Str.Field.Dns">DNS servers (optional)</sys:String>
+    <sys:String x:Key="Str.Field.DnsShort">DNS</sys:String>
+    <sys:String x:Key="Str.Field.DnsHint">Several servers: separate them with commas. Empty = automatic DNS.</sys:String>
+    <sys:String x:Key="Str.Field.Mode">Assignment</sys:String>
+    <sys:String x:Key="Str.Field.Network">Network</sys:String>
+
+    <!-- ===== Profiles screen ===== -->
+    <sys:String x:Key="Str.Profiles.Search">Search profiles</sys:String>
+    <sys:String x:Key="Str.Profiles.New">New profile</sys:String>
+    <sys:String x:Key="Str.Profiles.Mine">My profiles</sys:String>
+    <sys:String x:Key="Str.Profiles.SimpleView">Simple</sys:String>
+    <sys:String x:Key="Str.Profiles.DetailedView">Detailed</sys:String>
+    <sys:String x:Key="Str.Profiles.LastTarget">Last target</sys:String>
+    <sys:String x:Key="Str.Profiles.NoMatch">No profile matches this search.</sys:String>
+    <sys:String x:Key="Str.Profiles.EmptyTitle">No profiles yet</sys:String>
+    <sys:String x:Key="Str.Profiles.EmptyText">Create a profile for each network you use often, then apply it in one click. You can also import profiles exported from another PC.</sys:String>
+
+    <sys:String x:Key="Str.Machine.Title">This machine</sys:String>
+    <sys:String x:Key="Str.Machine.Reading">Reading…</sys:String>
+    <sys:String x:Key="Str.Machine.RefreshedAt">Refreshed at {0}</sys:String>
+    <sys:String x:Key="Str.Machine.ReadFailed">Could not read this PC's network configuration (details in the log).</sys:String>
+    <sys:String x:Key="Str.Machine.ShowVirtual">Show virtual adapters ({0})</sys:String>
+    <sys:String x:Key="Str.Machine.HideVirtual">Hide virtual adapters ({0})</sys:String>
+    <sys:String x:Key="Str.Machine.Configure">Configure…</sys:String>
+    <sys:String x:Key="Str.Machine.Dhcp">Back to automatic (DHCP)</sys:String>
+    <sys:String x:Key="Str.Machine.MakePrivate">Make network private</sys:String>
+    <sys:String x:Key="Str.Machine.MakePublic">Make network public</sys:String>
+    <sys:String x:Key="Str.Machine.NothingToDo">No action available on this adapter</sys:String>
+    <sys:String x:Key="Str.Machine.InternetBadge">Internet</sys:String>
+    <sys:String x:Key="Str.Machine.DuplicateBadge">Address conflict</sys:String>
+
+    <sys:String x:Key="Str.Adapter.Connected">Connected</sys:String>
+    <sys:String x:Key="Str.Adapter.Unplugged">Cable unplugged</sys:String>
+    <sys:String x:Key="Str.Adapter.Disabled">Disabled</sys:String>
+    <sys:String x:Key="Str.Adapter.NoIpv4">No IP configuration (attached to a Hyper-V switch?)</sys:String>
+    <sys:String x:Key="Str.Adapter.Dhcp">DHCP</sys:String>
+    <sys:String x:Key="Str.Adapter.Manual">Manual</sys:String>
+    <sys:String x:Key="Str.Adapter.Private">Private</sys:String>
+    <sys:String x:Key="Str.Adapter.Public">Public</sys:String>
+    <sys:String x:Key="Str.Adapter.Domain">Domain (managed by your organization)</sys:String>
+    <sys:String x:Key="Str.Adapter.NoNetwork">—</sys:String>
+
+    <sys:String x:Key="Str.Profile.Active">Active</sys:String>
+    <sys:String x:Key="Str.Profile.Gateway">Gateway {0}</sys:String>
+    <sys:String x:Key="Str.Profile.NoGateway">No gateway</sys:String>
+    <sys:String x:Key="Str.Profile.Dns">DNS {0}</sys:String>
+    <sys:String x:Key="Str.Profile.AutoDns">Automatic DNS</sys:String>
+    <sys:String x:Key="Str.Profile.NeverApplied">Never applied</sys:String>
+    <sys:String x:Key="Str.Profile.TargetHost">Host · {0}</sys:String>
+    <sys:String x:Key="Str.Profile.TargetVm">VM · {0}</sys:String>
+    <sys:String x:Key="Str.Profile.TargetVmAdapter">VM · {0} ({1})</sys:String>
+    <sys:String x:Key="Str.Profile.Created">Profile "{0}" created.</sys:String>
+    <sys:String x:Key="Str.Profile.Updated">Profile "{0}" updated.</sys:String>
+    <sys:String x:Key="Str.Profile.Deleted">Profile "{0}" deleted.</sys:String>
+    <sys:String x:Key="Str.Profile.DeleteTitle">Delete this profile?</sys:String>
+    <sys:String x:Key="Str.Profile.DeleteMessage">Profile "{0}" will be permanently deleted. The PC's current network configuration is not changed.</sys:String>
+    <sys:String x:Key="Str.Profile.AppliedOn">Applied · {0}</sys:String>
+    <sys:String x:Key="Str.Profile.AppliedTooltip">This profile is the current configuration of {0}, and that adapter is connected: it is in use right now.</sys:String>
+    <sys:String x:Key="Str.Profile.AppliedUnpluggedTooltip">This profile is the current configuration of {0}, but the adapter is unplugged: it is not in use for now.</sys:String>
+    <sys:String x:Key="Str.Transfer.Export">Export profiles</sys:String>
+    <sys:String x:Key="Str.Transfer.ExportSelection">Choose profiles…</sys:String>
+    <sys:String x:Key="Str.Transfer.SelectTitle">Export profiles</sys:String>
+    <sys:String x:Key="Str.Transfer.SelectHint">Tick the profiles to put in the file. Only the name, IP, mask, gateway and DNS are exported: nothing about this PC.</sys:String>
+    <sys:String x:Key="Str.Transfer.SelectAll">Select all</sys:String>
+    <sys:String x:Key="Str.Transfer.SelectNone">Select none</sys:String>
+    <sys:String x:Key="Str.Transfer.ExportCount">Export ({0})</sys:String>
+    <sys:String x:Key="Str.Time.Today">Today, {0}</sys:String>
+    <sys:String x:Key="Str.Time.Yesterday">Yesterday, {0}</sys:String>
+
+    <!-- ===== Editor ===== -->
+    <sys:String x:Key="Str.Editor.NewTitle">New profile</sys:String>
+    <sys:String x:Key="Str.Editor.EditTitle">Edit profile</sys:String>
+    <sys:String x:Key="Str.Editor.DuplicateTitle">Duplicate profile</sys:String>
+    <sys:String x:Key="Str.Editor.AdapterTitle">Configure "{0}"</sys:String>
+    <sys:String x:Key="Str.Editor.CopyName">{0} (copy)</sys:String>
+    <sys:String x:Key="Str.Editor.FillFrom">Copy from…</sys:String>
+    <sys:String x:Key="Str.Editor.RiskWarning">This may be the adapter you are connected through right now: a wrong value can cut the connection. If applying fails, the previous configuration is restored.</sys:String>
+
+    <!-- ===== Apply ===== -->
+    <sys:String x:Key="Str.Apply.Title">Apply "{0}"</sys:String>
+    <sys:String x:Key="Str.Apply.ThisComputer">This computer</sys:String>
+    <sys:String x:Key="Str.Apply.VirtualMachine">Virtual machine</sys:String>
+    <sys:String x:Key="Str.Apply.VmSoon">Available with the Hyper-V module (next development step).</sys:String>
+    <sys:String x:Key="Str.Apply.Adapter">Network adapter</sys:String>
+    <sys:String x:Key="Str.Apply.InternetBadge">Current Internet connection</sys:String>
+    <sys:String x:Key="Str.Apply.WifiBadge">Wi-Fi</sys:String>
+    <sys:String x:Key="Str.Apply.RiskWarning">This adapter may connect you to the Internet or to your company network: a wrong value can cut that connection.</sys:String>
+    <sys:String x:Key="Str.Apply.Rollback">The adapter's current configuration is saved: if applying fails, PONI restores it automatically.</sys:String>
+    <sys:String x:Key="Str.Apply.NoRollback">Automatic rollback is off (see Settings): if applying fails, the adapter may be left unconfigured.</sys:String>
+
+    <!-- ===== Network operations ===== -->
+    <sys:String x:Key="Str.Net.Applying">Applying "{0}" on {1}…</sys:String>
+    <sys:String x:Key="Str.Net.ApplyingAdapter">Configuring {0}…</sys:String>
+    <sys:String x:Key="Str.Net.Applied">Configuration applied and verified on {0}.</sys:String>
+    <sys:String x:Key="Str.Net.NeedsAdmin">PONI must run as administrator to change the network configuration.</sys:String>
+    <sys:String x:Key="Str.Net.NoIpv4">"{0}" has no IP configuration: it is probably attached to a VM through the RJ45 port.</sys:String>
+    <sys:String x:Key="Str.Net.Duplicate">Address {0} is already used by another device on the network ({1}).</sys:String>
+    <sys:String x:Key="Str.Net.NotConfirmed.IP">The IP address does not show up on {0} after applying.</sys:String>
+    <sys:String x:Key="Str.Net.NotConfirmed.Gateway">The gateway could not be confirmed on {0}.</sys:String>
+    <sys:String x:Key="Str.Net.NotConfirmed.Dns">The DNS servers could not be confirmed on {0}.</sys:String>
+    <sys:String x:Key="Str.Net.NotConfirmed.Dhcp">Automatic mode (DHCP) could not be confirmed on {0}.</sys:String>
+    <sys:String x:Key="Str.Net.Failed">Failed on {0}: {1}</sys:String>
+    <sys:String x:Key="Str.Net.RolledBack">The previous configuration was restored.</sys:String>
+    <sys:String x:Key="Str.Net.RollbackFailed">Warning: the previous configuration could not be restored, check the adapter (details in the log).</sys:String>
+    <sys:String x:Key="Str.Net.DhcpTitle">Back to automatic?</sys:String>
+    <sys:String x:Key="Str.Net.DhcpMessage">"{0}" will ask for an address automatically (DHCP). Its current static configuration is removed and the connection on this adapter briefly drops.</sys:String>
+    <sys:String x:Key="Str.Net.DhcpConfirm">Switch to DHCP</sys:String>
+    <sys:String x:Key="Str.Net.DhcpWorking">Switching {0} to DHCP…</sys:String>
+    <sys:String x:Key="Str.Net.DhcpDone">{0} is back to automatic (DHCP).</sys:String>
+    <sys:String x:Key="Str.Net.CategoryWorking">Changing the network type of {0}…</sys:String>
+    <sys:String x:Key="Str.Net.CategoryPrivateDone">{0}: private network.</sys:String>
+    <sys:String x:Key="Str.Net.CategoryPublicDone">{0}: public network.</sys:String>
+    <sys:String x:Key="Str.Net.CategoryDomain">{0} is on a company (domain) network: Windows does not allow changing its type.</sys:String>
+    <sys:String x:Key="Str.Net.CategoryNoNetwork">{0} is not connected to any network: its type cannot be changed.</sys:String>
+    <sys:String x:Key="Str.Net.CategoryBlocked">The network type of {0} did not change: a company policy probably prevents it.</sys:String>
+
+    <!-- ===== Import / export ===== -->
+    <sys:String x:Key="Str.Transfer.Import">Import profiles</sys:String>
+    <sys:String x:Key="Str.Transfer.ExportAll">Export all profiles</sys:String>
+    <sys:String x:Key="Str.Transfer.ExportOne">Export</sys:String>
+    <sys:String x:Key="Str.Transfer.ImportTitle">Import PONI profiles</sys:String>
+    <sys:String x:Key="Str.Transfer.ExportTitle">Export PONI profiles</sys:String>
+    <sys:String x:Key="Str.Transfer.Exported">{0} profile(s) exported to {1}.</sys:String>
+    <sys:String x:Key="Str.Transfer.ExportFailed">Export failed: {0}</sys:String>
+    <sys:String x:Key="Str.Transfer.Imported">{0} profile(s) imported, {1} skipped (details in the log).</sys:String>
+    <sys:String x:Key="Str.Transfer.NothingFound">No profile in this file.</sys:String>
+    <sys:String x:Key="Str.Transfer.NotAProfileFile">This file contains no readable PONI profiles.</sys:String>
+    <sys:String x:Key="Str.Transfer.ImportFailed">Import failed: {0}</sys:String>
+    <sys:String x:Key="Str.Store.SaveFailed">The profiles could not be saved (details in the log).</sys:String>
+
+    <!-- ===== Settings (applying) ===== -->
+    <sys:String x:Key="Str.Settings.ApplyGroup">APPLYING PROFILES</sys:String>
+    <sys:String x:Key="Str.Settings.SetPrivate">Set the network to "Private"</sys:String>
+    <sys:String x:Key="Str.Settings.SetPrivate.Caption">Off: PONI leaves the network's Public / Private category alone (safer on an unknown network).</sys:String>
+    <sys:String x:Key="Str.Settings.Rollback">Undo automatically on failure</sys:String>
+    <sys:String x:Key="Str.Settings.Rollback.Caption">Restores the previous configuration if the new one cannot be applied.</sys:String>
+
+    <!-- ===== Hyper-V ===== -->
+    <sys:String x:Key="Str.Common.Refresh">Refresh</sys:String>
+    <sys:String x:Key="Str.HyperV.ChipAbsent">No Hyper-V</sys:String>
+    <sys:String x:Key="Str.HyperV.ChipOff">Hyper-V off</sys:String>
+    <sys:String x:Key="Str.HyperV.ChipOn">Hyper-V on</sys:String>
+    <sys:String x:Key="Str.HyperV.ChipVms">Hyper-V on · {0} VM(s)</sys:String>
+    <sys:String x:Key="Str.HyperV.StatusAbsent">Hyper-V is not installed on this PC (e.g. Windows Home): the RJ45 port tab and the "VM" target are hidden.</sys:String>
+    <sys:String x:Key="Str.HyperV.StatusNoAccess">Hyper-V is installed, but PONI cannot read it: run PONI as administrator.</sys:String>
+    <sys:String x:Key="Str.HyperV.StatusNoModule">Hyper-V is installed, but its PowerShell module is missing (Windows feature "Hyper-V Module for Windows PowerShell").</sys:String>
+    <sys:String x:Key="Str.HyperV.StatusOn">Hyper-V detected. Off: the RJ45 port tab and the "VM" target are hidden.</sys:String>
+    <sys:String x:Key="Str.HyperV.StatusOff">Off: the RJ45 port tab and the "VM" target are hidden, and PONI never reads Hyper-V.</sys:String>
+    <sys:String x:Key="Str.HyperV.DemoMode">Demo mode (Debug): nothing is changed.</sys:String>
+    <sys:String x:Key="Str.Settings.Rj45Adapter">RJ45 port physical adapter</sys:String>
+    <sys:String x:Key="Str.Settings.Rj45Adapter.Caption">Can be changed while the port belongs to Windows.</sys:String>
+    <sys:String x:Key="Str.Settings.VmPing">Let VMs answer ping</sys:String>
+    <sys:String x:Key="Str.Settings.VmPing.Caption">When a profile is applied inside a VM, PONI allows ping from the local network there (its own firewall rule "PONI-Ping-In"). Off: PONI removes that rule on the next apply.</sys:String>
+    <sys:String x:Key="Str.Settings.Diagnostics">DIAGNOSTICS</sys:String>
+    <sys:String x:Key="Str.Settings.Log">PONI log</sys:String>
+    <sys:String x:Key="Str.Settings.Log.Caption">Everything PONI read and changed, day by day.</sys:String>
+    <sys:String x:Key="Str.Settings.Log.Open">Open</sys:String>
+
+    <sys:String x:Key="Str.Nav.Collapse">Collapse the sidebar (Ctrl+B)</sys:String>
+    <sys:String x:Key="Str.Nav.Expand">Expand the sidebar (Ctrl+B)</sys:String>
+
+    <sys:String x:Key="Str.Sort.Tooltip">Sort profiles: {0}</sys:String>
+    <sys:String x:Key="Str.Sort.NameAsc">Name (A → Z)</sys:String>
+    <sys:String x:Key="Str.Sort.NameDesc">Name (Z → A)</sys:String>
+    <sys:String x:Key="Str.Sort.CreatedAsc">Date created (oldest first)</sys:String>
+    <sys:String x:Key="Str.Sort.CreatedDesc">Date created (newest first)</sys:String>
+    <sys:String x:Key="Str.Sort.Custom">Custom (drag and drop)</sys:String>
+    <sys:String x:Key="Str.Sort.MoveUp">Move up</sys:String>
+    <sys:String x:Key="Str.Sort.MoveDown">Move down</sys:String>
+    <sys:String x:Key="Str.Sort.DragHint">Drag to move this profile</sys:String>
+    <sys:String x:Key="Str.Log.Title">Log</sys:String>
+    <sys:String x:Key="Str.Log.Subtitle">What PONI did, day by day. Kept {0} days, on this PC only.</sys:String>
+    <sys:String x:Key="Str.Log.All">All</sys:String>
+    <sys:String x:Key="Str.Log.Problems">Problems</sys:String>
+    <sys:String x:Key="Str.Log.Today">Today</sys:String>
+    <sys:String x:Key="Str.Log.Yesterday">Yesterday</sys:String>
+    <sys:String x:Key="Str.Log.Older">Previous day</sys:String>
+    <sys:String x:Key="Str.Log.Newer">Next day</sys:String>
+    <sys:String x:Key="Str.Log.Refresh">Refresh</sys:String>
+    <sys:String x:Key="Str.Log.Count">{0} lines · {1} warning(s) · {2} error(s)</sys:String>
+    <sys:String x:Key="Str.Log.Empty">No lines for this day.</sys:String>
+    <sys:String x:Key="Str.Log.NoProblem">No warning or error that day.</sys:String>
+    <sys:String x:Key="Str.Log.Copy">Copy</sys:String>
+    <sys:String x:Key="Str.Log.Copied">Copied</sys:String>
+    <sys:String x:Key="Str.Log.OpenFolder">Open folder</sys:String>
+    <sys:String x:Key="Str.Log.Info">Info</sys:String>
+    <sys:String x:Key="Str.Log.Warn">Warning</sys:String>
+    <sys:String x:Key="Str.Log.Error">Error</sys:String>
+
+    <sys:String x:Key="Str.VmState.Running">Running</sys:String>
+    <sys:String x:Key="Str.VmState.Off">Off</sys:String>
+    <sys:String x:Key="Str.VmState.Saved">Saved</sys:String>
+    <sys:String x:Key="Str.VmState.Paused">Paused</sys:String>
+    <sys:String x:Key="Str.VmState.Starting">Starting…</sys:String>
+    <sys:String x:Key="Str.VmState.Stopping">Stopping…</sys:String>
+
+    <sys:String x:Key="Str.Rj45.DanglingTitle">Some VMs cannot start</sys:String>
+    <sys:String x:Key="Str.Rj45.DanglingText">These network adapters still point to a switch that was deleted. Hyper-V then refuses to start the VM, with a misleading "Insufficient system resources" message.</sys:String>
+    <sys:String x:Key="Str.Rj45.Repair">Repair</sys:String>
+    <sys:String x:Key="Str.Rj45.RepairTitle">Repair the VM adapters?</sys:String>
+    <sys:String x:Key="Str.Rj45.RepairMessage">These adapters will simply be unplugged (they lead nowhere):&#x0a;&#x0a;{0}&#x0a;&#x0a;No switch is created or removed, and adapters connected to an existing switch are not touched.</sys:String>
+    <sys:String x:Key="Str.Rj45.Repairing">Repairing the VM adapters…</sys:String>
+    <sys:String x:Key="Str.Rj45.RepairDone">{0} adapter(s) repaired: the VMs can start again.</sys:String>
+    <sys:String x:Key="Str.Rj45.RepairIncomplete">{0} adapter(s) still point to a deleted switch (details in the log).</sys:String>
+    <sys:String x:Key="Str.Rj45.Reading">Reading Hyper-V…</sys:String>
+    <sys:String x:Key="Str.Rj45.HostName">Windows (host)</sys:String>
+    <sys:String x:Key="Str.Rj45.HostSub">This PC · adapter {0}</sys:String>
+    <sys:String x:Key="Str.Rj45.HostSubShort">This PC</sys:String>
+    <sys:String x:Key="Str.Rj45.VmSubAdapter">Adapter {0}</sys:String>
+    <sys:String x:Key="Str.Rj45.VmSubNone">Adapter added when needed</sys:String>
+    <sys:String x:Key="Str.Rj45.Nobody">Nobody</sys:String>
+    <sys:String x:Key="Str.Rj45.NoPhysical">(no wired adapter)</sys:String>
+    <sys:String x:Key="Str.Rj45.LinkedHere">Linked here</sys:String>
+    <sys:String x:Key="Str.Rj45.Available">Available</sys:String>
+    <sys:String x:Key="Str.Rj45.CurrentDestination">Current destination</sys:String>
+    <sys:String x:Key="Str.Rj45.GiveToWindows">Give back to Windows</sys:String>
+    <sys:String x:Key="Str.Rj45.LinkHere">Link here</sys:String>
+    <sys:String x:Key="Str.Rj45.ChangePhysical">Change physical adapter…</sys:String>
+    <sys:String x:Key="Str.Rj45.ChangeOnlyOnHost">Give the port back to Windows first to change the physical adapter.</sys:String>
+    <sys:String x:Key="Str.Rj45.Destinations">Destinations</sys:String>
+    <sys:String x:Key="Str.Rj45.OneAtATime">One destination at a time. PONI never starts or stops a VM.</sys:String>
+    <sys:String x:Key="Str.Rj45.PillOk">Verified in Hyper-V at {0}</sys:String>
+    <sys:String x:Key="Str.Rj45.PillAnomaly">Needs fixing · verified at {0}</sys:String>
+    <sys:String x:Key="Str.Rj45.TitleHost">The port belongs to Windows</sys:String>
+    <sys:String x:Key="Str.Rj45.TitleVm">The port is linked to VM "{0}"</sys:String>
+    <sys:String x:Key="Str.Rj45.TitleShared">The port is shared by several VMs</sys:String>
+    <sys:String x:Key="Str.Rj45.TitleOrphan">Nobody uses the port</sys:String>
+    <sys:String x:Key="Str.Rj45.TextHost">Adapter {0} serves this PC as usual. Pick a VM below to give it the port: PONI creates the RJ45-Switch switch and the RJ45-Adapter adapter in the VM by itself.</sys:String>
+    <sys:String x:Key="Str.Rj45.TextVm">Windows has no network on adapter {0} while this link is active. PONI removes the switch when you give the port back to Windows.</sys:String>
+    <sys:String x:Key="Str.Rj45.TextShared">Several VMs are linked to the port at once (v1 sometimes did this). Pick one below - the others get unplugged - or give the port back to Windows.</sys:String>
+    <sys:String x:Key="Str.Rj45.TextOrphan">The RJ45-Switch switch exists but no VM uses it: Windows lost adapter {0} for nothing. Give the port back to Windows or pick a VM.</sys:String>
+    <sys:String x:Key="Str.Rj45.Switching">Switching the RJ45 port…</sys:String>
+    <sys:String x:Key="Str.Rj45.ToHostTitle">Give the port back to Windows?</sys:String>
+    <sys:String x:Key="Str.Rj45.ToHostMessage">The RJ45-Switch switch will be removed and adapter {0} will return to Windows. Current destination: {1}, which will lose network access through this port.</sys:String>
+    <sys:String x:Key="Str.Rj45.ToVmTitle">Link the port to this VM?</sys:String>
+    <sys:String x:Key="Str.Rj45.ToVmMessage">The RJ45 port (adapter {0}) will be linked to VM "{1}". Windows will have no network on this adapter while it is linked.</sys:String>
+    <sys:String x:Key="Str.Rj45.ToVmLoses">VM "{0}" will lose the port (its adapter will be unplugged).</sys:String>
+    <sys:String x:Key="Str.Rj45.ToVmStopped">This VM is off: the port will be ready when it next starts.</sys:String>
+    <sys:String x:Key="Str.Rj45.ToVmDone">RJ45 port linked to VM "{0}" - verified in Hyper-V. If the adapter does not show up in the VM, restart it.</sys:String>
+    <sys:String x:Key="Str.Rj45.ToHostDone">RJ45 port given back to Windows - switch removed and verified.</sys:String>
+    <sys:String x:Key="Str.Rj45.ToHostNotConfirmed">The RJ45-Switch switch is still there after removal (details in the log).</sys:String>
+    <sys:String x:Key="Str.Rj45.VmMissing">VM "{0}" no longer exists.</sys:String>
+    <sys:String x:Key="Str.Rj45.PhysicalMissing">Adapter "{0}" cannot be found: choose the RJ45 port physical adapter.</sys:String>
+    <sys:String x:Key="Str.Rj45.PhysicalDisabled">Adapter "{0}" is disabled in Windows: enable it first.</sys:String>
+    <sys:String x:Key="Str.Rj45.SwitchOnOtherAdapter">The RJ45-Switch switch uses another adapter ({0}). Give the port back to Windows first.</sys:String>
+    <sys:String x:Key="Str.Rj45.AdapterUsedByOtherSwitch">Adapter "{0}" is already used by your switch "{1}". PONI leaves it alone: choose another physical adapter.</sys:String>
+    <sys:String x:Key="Str.Rj45.NotConfirmed">The link with VM "{0}" could not be confirmed in Hyper-V (details in the log).</sys:String>
+    <sys:String x:Key="Str.Rj45.Failed">Switch failed: {0}</sys:String>
+    <sys:String x:Key="Str.Rj45.NoPhysicalError">No wired adapter is available for the RJ45 port.</sys:String>
+    <sys:String x:Key="Str.Rj45.PhysicalTitle">RJ45 port physical adapter</sys:String>
+    <sys:String x:Key="Str.Rj45.PhysicalHint">The wired network adapter behind the RJ45 socket you want to give to VMs.</sys:String>
+    <sys:String x:Key="Str.Rj45.WifiNotSuitable">Wi-Fi: not suitable as a VM port.</sys:String>
+    <sys:String x:Key="Str.Rj45.PhysicalChanged">RJ45 port physical adapter: {0}.</sys:String>
+    <sys:String x:Key="Str.Rj45.ReleaseTitle">Give the RJ45 port back to Windows?</sys:String>
+    <sys:String x:Key="Str.Rj45.ReleaseMessage">Adapter "{0}" is currently a VM's RJ45 port: Windows cannot configure it. Give the port back to Windows now, then apply the profile?</sys:String>
+    <sys:String x:Key="Str.Rj45.ReleaseConfirm">Give back and apply</sys:String>
+    <sys:String x:Key="Str.Rj45.NotBackYet">The port is back to Windows, but "{0}" is not ready yet: try again in a few seconds.</sys:String>
+
+    <sys:String x:Key="Str.Apply.Preparing">Reading the network and Hyper-V configuration…</sys:String>
+    <sys:String x:Key="Str.Apply.VmNoSwitch">This adapter is not plugged into any switch: the IP will be stored, but the adapter stays "Media disconnected" inside the VM (and ipconfig will not show the IP) until it is plugged in, for instance by linking the RJ45 port to this VM.</sys:String>
+    <sys:String x:Key="Str.Apply.VmOff">Hyper-V module off or unavailable (see Settings).</sys:String>
+    <sys:String x:Key="Str.Apply.VmTabHint">Apply inside a running virtual machine.</sys:String>
+    <sys:String x:Key="Str.Apply.VmRunningOnly">Only running VMs can receive a profile: PONI never starts or stops a VM.</sys:String>
+    <sys:String x:Key="Str.Apply.NoRunningVm">No VM is running. Start the VM you want (Hyper-V Manager), then reopen this window.</sys:String>
+    <sys:String x:Key="Str.Apply.Vm">Virtual machine</sys:String>
+    <sys:String x:Key="Str.Apply.VmAdapter">VM network adapter</sys:String>
+    <sys:String x:Key="Str.Apply.VmAdapterOnSwitch">On switch {0}</sys:String>
+    <sys:String x:Key="Str.Apply.VmAdapterNoSwitch">Not connected to any switch</sys:String>
+    <sys:String x:Key="Str.Apply.VmPingOn">The VM will answer ping from the local network (PONI firewall rule, see Settings).</sys:String>
+    <sys:String x:Key="Str.Apply.VmPingOff">Ping not allowed: PONI will remove its firewall rule inside the VM (see Settings).</sys:String>
+    <sys:String x:Key="Str.Apply.VmMacInfo">Inside the VM the adapter is found by its MAC address: its Windows name ("Ethernet N") does not matter.</sys:String>
+    <sys:String x:Key="Str.Apply.Rj45Badge">RJ45 port</sys:String>
+    <sys:String x:Key="Str.Apply.Rj45HeldBy">RJ45 port linked to VM {0}: it will be given back to Windows before applying.</sys:String>
+    <sys:String x:Key="Str.Apply.Rj45Orphan">RJ45 port held by an unused switch: it will be given back to Windows before applying.</sys:String>
+    <sys:String x:Key="Str.Apply.Rj45ReleaseInfo">This adapter is the RJ45 port, currently given to a VM. PONI first gives it back to Windows (the VM loses this network), then applies the profile.</sys:String>
+
+    <sys:String x:Key="Str.Vm.CredTitle">Sign in to VM "{0}"</sys:String>
+    <sys:String x:Key="Str.Vm.CredHint">An administrator account INSIDE the VM (PowerShell Direct: works even if the VM has no network yet).</sys:String>
+    <sys:String x:Key="Str.Vm.CredUser">User name</sys:String>
+    <sys:String x:Key="Str.Vm.CredPassword">Password</sys:String>
+    <sys:String x:Key="Str.Vm.CredPrivacy">The password is never saved. Only the user name is remembered, and only after a successful connection.</sys:String>
+    <sys:String x:Key="Str.Vm.CredConnect">Apply</sys:String>
+    <sys:String x:Key="Str.Vm.Applying">Applying "{0}" inside VM "{1}"…</sys:String>
+    <sys:String x:Key="Str.Vm.Applied">Configuration applied and verified inside VM "{0}".</sys:String>
+    <sys:String x:Key="Str.Vm.AppliedPing">Configuration applied and verified inside VM "{0}". It answers ping from the local network.</sys:String>
+    <sys:String x:Key="Str.Vm.AppliedPingFailed">Configuration applied and verified inside VM "{0}", but ping could not be allowed there: {1}</sys:String>
+    <sys:String x:Key="Str.Vm.Missing">VM "{0}" no longer exists.</sys:String>
+    <sys:String x:Key="Str.Vm.NotRunning">VM "{0}" is no longer running. Start it, then try again.</sys:String>
+    <sys:String x:Key="Str.Vm.Session">Cannot connect to VM "{0}" (wrong credentials, or VM not ready yet): {1}</sys:String>
+    <sys:String x:Key="Str.Vm.AdapterNotFound">Adapter "{0}" cannot be found inside VM "{1}": if it was just added, restart the VM.</sys:String>
+    <sys:String x:Key="Str.Vm.Duplicate">The address is already used by another device on VM "{0}"'s network.</sys:String>
+    <sys:String x:Key="Str.Vm.Failed">Failed inside VM "{0}": {1}</sys:String>
+    <!-- Validation (form, import, migration). {0}, {1}... = arguments. -->
+    <sys:String x:Key="Str.Val.NameRequired">The profile name is required.</sys:String>
+    <sys:String x:Key="Str.Val.NameTooLong">The profile name must not exceed {0} characters.</sys:String>
+    <sys:String x:Key="Str.Val.NameExists">A profile named "{0}" already exists.</sys:String>
+    <sys:String x:Key="Str.Val.IpInvalid">Invalid IP address (example: 192.168.1.10).</sys:String>
+    <sys:String x:Key="Str.Val.IpReserved">Address {0} is reserved and cannot be assigned to a network adapter.</sys:String>
+    <sys:String x:Key="Str.Val.IpIsNetwork">{0} is the address of the /{1} network itself, not a host address.</sys:String>
+    <sys:String x:Key="Str.Val.IpIsBroadcast">{0} is the broadcast address of the /{1} network, not a host address.</sys:String>
+    <sys:String x:Key="Str.Val.IpApipa">169.254.x.x address: this is Windows' automatic fallback address, rarely wanted as a static one.</sys:String>
+    <sys:String x:Key="Str.Val.MaskInvalid">Invalid subnet mask (example: 255.255.255.0 or 24).</sys:String>
+    <sys:String x:Key="Str.Val.GatewayInvalid">Invalid gateway.</sys:String>
+    <sys:String x:Key="Str.Val.GatewayEqualsIp">The gateway cannot be the IP address itself.</sys:String>
+    <sys:String x:Key="Str.Val.GatewayOutsideSubnet">Gateway {0} is not in the {1}/{2} network: Internet access may not work.</sys:String>
+    <sys:String x:Key="Str.Val.DnsInvalid">Invalid DNS: "{0}" is not an IPv4 address.</sys:String>
+    <sys:String x:Key="Str.Val.NotAnObject">Unreadable entry.</sys:String>
+
+    <!-- Data file -->
+    <sys:String x:Key="Str.Store.RecoveredFromBackup">The profiles file was unreadable. PONI restored the latest automatic backup.&#x0a;&#x0a;The damaged file was kept here:&#x0a;{0}</sys:String>
+    <sys:String x:Key="Str.Store.RecoveredEmpty">The profiles file was unreadable and no backup could be read. PONI starts with an empty list.&#x0a;&#x0a;The damaged file was kept here:&#x0a;{0}</sys:String>
+
+    <sys:String x:Key="Str.Error.Title">PONI - unexpected error</sys:String>
+    <sys:String x:Key="Str.Error.Message">An unexpected error occurred. PONI stays open, but the current action was interrupted.</sys:String>
+
+</ResourceDictionary>

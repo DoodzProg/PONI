@@ -1,0 +1,83 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    PONI v2 - WPF on .NET Framework 4.8.
+    .NET Framework 4.8 and WPF ship with Windows 10 (1903+) and Windows 11, so the build output
+    is ONE self-contained PONI.exe: XAML, images and the icon are embedded, there are no
+    third-party DLLs and no PONI.exe.config. Keep it that way (no NuGet runtime dependency).
+  -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Poni</RootNamespace>
+    <AssemblyName>PONI</AssemblyName>
+    <ApplicationIcon>..\..\assets\PONI_icon.ico</ApplicationIcon>
+
+    <!-- Single source of truth for the version (shown in the UI, see AppInfo). -->
+    <Version>2.0.0</Version>
+    <InformationalVersion>2.0.0</InformationalVersion>
+    <!-- Show "2.0.0", not "2.0.0+<git commit>" (the .NET SDK appends it when built from a git clone). -->
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <Product>PONI</Product>
+    <AssemblyTitle>PONI - Plain Open Network Interface</AssemblyTitle>
+    <Description>Portable Windows network-profile switcher with Hyper-V RJ45 routing.</Description>
+    <Company>Doodz</Company>
+    <Copyright>Copyright (c) 2026 Gaëtan Lacoffrette</Copyright>
+
+    <!-- The PDB is embedded in the exe: stack traces keep line numbers, still one file. -->
+    <DebugType>embedded</DebugType>
+    <!-- Source paths recorded in that PDB (and shown in stack traces) are relative to the repository
+         ("/_/src/PONI/App.xaml.cs"), never the build machine's own folders. -->
+    <PathMap>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\..\'))=/_/</PathMap>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <!-- No PONI.exe.config next to the exe: the CLR 4 runtime is picked from the exe header. -->
+    <GenerateSupportedRuntime>false</GenerateSupportedRuntime>
+    <SatelliteResourceLanguages>none</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <!-- Release requires elevation (network configuration needs admin rights, as in v1).
+       Debug runs as the current user so the UI can be launched and inspected without UAC. -->
+  <!-- PoniAsInvoker=true (dotnet build -p:PoniAsInvoker=true): an optimized Release build that
+       runs without elevation, ONLY to measure startup / memory without a UAC prompt. Never shipped:
+       build.ps1 never sets it. -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release' and '$(PoniAsInvoker)' != 'true'">
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' != 'Release' or '$(PoniAsInvoker)' == 'true'">
+    <ApplicationManifest>app.debug.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <!-- Windows components only (present on every Windows 10/11, never copied next to the exe):
+       - System.Management: WMI reads of the network configuration (fast, no PowerShell);
+       - System.Management.Automation: Windows PowerShell 5.1 engine hosted in-process, used for
+         the network CHANGES (the NetTCPIP / DnsClient cmdlets validated with v1 on real hardware)
+         and later for Hyper-V. Referenced from the GAC with Private=false: not shipped. -->
+  <ItemGroup>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Automation">
+      <HintPath>$(WINDIR)\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- PowerShell scripts embedded in the exe (still a single file). -->
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\*.ps1" LogicalName="Poni.Scripts.%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <!-- The unit tests (tests/PONI.Tests) exercise the Poni.Core types of this exe. -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="PONI.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\poni-logo.png" />
+    <None Remove="app.manifest;app.debug.manifest" />
+  </ItemGroup>
+
+</Project>
